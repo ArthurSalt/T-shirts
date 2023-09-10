@@ -1,0 +1,182 @@
+[
+   {
+      "id": 0,
+      "name": "Smoke",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/1/1010/1010896/previews/people_4_manshortfull_front_white_500.jpg",
+      "price": 120,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+      "type": [0, 1],
+      "rating": 3
+   },
+   {
+      "id": 1,
+      "name": "Neon Toxic Waves",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/3/3041/3041565/previews/people_4_manshortfull_front_white_500.jpg",
+      "price": 130,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+      "type": [0, 1],
+      "rating": 4
+   },
+   {
+      "id": 2,
+      "name": "Space",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/3/3148/3148929/previews/people_4_manshortfull_front_white_500.jpg",
+      "price": 130,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+      "type": [0, 1],
+      "rating": 5
+   },
+   {
+      "id": 3,
+      "name": "Clouds",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/3/3170/3170329/previews/people_13_man_tshirt_sport_front_white_500.jpg",
+      "price": 150,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+      "type": [0, 1],
+      "rating": 3
+   },
+   {
+      "id": 4,
+      "name": "Graffiti",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/3/3032/3032107/previews/people_10_mens_t_shirts_oversize_3d_front_white_500.jpg",
+      "price": 120,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+      "type": [0, 1],
+      "rating": 3
+   },
+   {
+      "id": 5,
+      "name": "Kitties",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/2/2844/2844559/previews/people_10_mens_t_shirts_oversize_3d_front_white_500.jpg",
+      "price": 100,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+      "type": [0, 1],
+      "rating": 3
+   },
+   {
+      "id": 6,
+      "name": "Galaxy",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/3/3164/3164431/previews/people_13_man_tshirt_sport_front_white_500.jpg",
+      "price": 150,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+      "type": [0, 1],
+      "rating": 5
+   },
+   {
+      "id": 7,
+      "name": "Toxic Green",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/3/3171/3171371/previews/people_4_manshortfull_front_white_500.jpg",
+      "price": 120,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+      "type": [0, 1],
+      "rating": 3
+   },
+   {
+      "id": 8,
+      "name": "Abstract Blue",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/3/3248/3248339/previews/people_13_man_tshirt_sport_front_white_500.jpg",
+      "price": 120,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+      "type": [0, 1],
+      "rating": 4
+   },
+   {
+      "id": 9,
+      "name": "Blue and Black",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/1/1879/1879869/previews/people_13_man_tshirt_sport_front_white_500.jpg",
+      "price": 130,
+      "sizes": ["S", "M", "L", "XL"],
+      "type": [0, 1],
+      "rating": 3
+   },
+   {
+      "id": 10,
+      "name": "404 Not Found",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/1/1347/1347137/previews/people_13_hoodie_front_darkblue_500.jpg",
+      "price": 310,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+      "type": [0, 2],
+      "rating": 3
+   },
+   {
+      "id": 11,
+      "name": "NASA",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/1/1783/1783389/previews/people_13_hoodie_front_beige_500.jpg",
+      "price": 320,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+      "type": [0, 2],
+      "rating": 3
+   },
+   {
+      "id": 12,
+      "name": "Offline",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/2/2009/2009345/previews/people_13_hoodie_front_beige_500.jpg",
+      "price": 320,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+      "type": [0, 2],
+      "rating": 4
+   },
+   {
+      "id": 13,
+      "name": "Planet Express",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/0/107/107134/previews/people_13_hoodie_front_melange_500.jpg",
+      "price": 370,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+      "type": [0, 2],
+      "rating": 5
+   },
+   {
+      "id": 14,
+      "name": "Picture",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/1/1871/1871909/previews/people_7_manlongfull_front_white_500.jpg",
+      "price": 150,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+      "type": [0, 3],
+      "rating": 4
+   },
+   {
+      "id": 15,
+      "name": "Neon Kitty",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/3/3278/3278079/previews/people_7_manlongfull_front_white_500.jpg",
+      "price": 350,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+      "type": [0, 3],
+      "rating": 5
+   },
+   {
+      "id": 16,
+      "name": "Grunge",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/3/3233/3233317/previews/people_7_manlongfull_front_white_500.jpg",
+      "price": 140,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+      "type": [0, 3],
+      "rating": 4
+   },
+   {
+      "id": 17,
+      "name": "Cyberpunk",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/3/3095/3095421/previews/people_7_manlongfull_front_white_500.jpg",
+      "price": 140,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+      "type": [0, 3],
+      "rating": 4
+   },
+   {
+      "id": 18,
+      "name": "Futuristic Mountains",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/3/3339/3339709/previews/people_1_mansmockfull_front_black_500.jpg",
+      "price": 350,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+      "type": [0, 4],
+      "rating": 3
+   },
+   {
+      "id": 19,
+      "name": "Snowflakes",
+      "imageUrl": "https://storage.vsemayki.ru/images/0/3/3018/3018943/previews/people_1_mansmockfull_front_black_500.jpg",
+      "price": 340,
+      "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+      "type": [0, 4],
+      "rating": 4
+   }
+]
