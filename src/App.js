@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+
+import { Routes, Route, Link } from 'react-router-dom';
 
 import logoPng from './assets/img/t_shirt_logo.png';
 import cartIcon from './assets/img/cart_icon.png';
-import Category from './components/Category/Category';
-import Sort from './components/Sort/Sort';
-import ItemCard from './components/ItemCard/ItemCard';
+
+
+import Home from './components/Pages/Home';
+import Cart from './components/Pages/Cart';
 
 import './reset.css';
 import './App.css';
@@ -14,21 +17,14 @@ import './App.css';
 
 
 function App() {
-  const [items, setItems] = React.useState([]);
-  const categories = ['All', 'T-Shirt', 'Hoodie', 'Longsleeve', 'Sweatshirt'];
 
-  useEffect(() => {
-    fetch("https://64efad78219b3e2873c4c415.mockapi.io/items")
-      .then((res) => res.json())
-      .then((data) => setItems(data));
-  }, [])
 
   return (
     <div className="wrapper">
       <div className="container">
         <div className="content">
           <header className='header'>
-            <div className="header_logo">
+            <Link to="/" className="header_logo">
               <div className="header_icon">
                 <img className='logo_img' src={logoPng} alt="logo_img" />
               </div>
@@ -37,33 +33,25 @@ function App() {
                 <p>Best T-shirts all in one place</p>
               </div>
 
-            </div>
+            </Link>
             <div className='search'>
               <input className='search_input' type="text" placeholder='search...' />
             </div>
             <div className="cart_wrapper">
-              <div className="cart">
+              <Link to='/cart' className="cart">
                 <p>$4050</p>
                 <p>|</p>
                 <img className='cart_img' src={cartIcon} alt="cart_logo" />
                 <b>5</b>
-              </div>
+              </Link>
             </div>
           </header>
-          <section className='content_top'>
-            <Category />
-            <Sort />
-          </section>
-          <section className='items'>
-            <h1 className='items_list_name'>All T-Shirts</h1>
-            <div className="items_list">
-              {items.map(obj => 
-                <ItemCard {...obj}/>)}
-            </div>
-          </section>
-
-
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/cart' element={<Cart />} />
+          </Routes>
         </div>
+
       </div>
     </div>
   );

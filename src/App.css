@@ -115,6 +115,10 @@
 }
 
 .item_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   margin: 10px;
 }
 
@@ -141,7 +145,6 @@
 
   background-color: rgb(197, 197, 197);
   cursor: pointer;
-
 }
 
 .size:hover {
@@ -149,6 +152,8 @@
 }
 
 .item_buyMenu {
+  width: 100%;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
 }

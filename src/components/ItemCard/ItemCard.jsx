@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 
-const ItemCard = ({ name, imageUrl, price, sizes, type }) => {
+const ItemCard = ({ name, imageUrl, price, sizes, category }) => {
 
 
 
@@ -9,7 +9,7 @@ const ItemCard = ({ name, imageUrl, price, sizes, type }) => {
       <div className='item_card'>
          <img className='item_img' src={imageUrl} alt="" />
          <p className='item_title'>{name}</p>
-         <p className='item_type'>{type}</p>
+         <p className='item_type'>{category}</p>
          <div className='item_controls'>
             <div className='item_size_row'>
                {sizes.map(size => <li className='size'>{size}</li>)}
