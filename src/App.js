@@ -2,13 +2,14 @@ import React from 'react';
 
 import { Routes, Route, Link } from 'react-router-dom';
 
-import logoPng from './assets/img/t_shirt_logo.png';
-import cartIcon from './assets/img/cart_icon.png';
 
 
+// components
 import Home from './components/Pages/Home';
 import Cart from './components/Pages/Cart';
+import Header from './components/Header/Header';
 
+// styles
 import './reset.css';
 import './App.css';
 
@@ -16,42 +17,21 @@ import './App.css';
 
 
 
+
 function App() {
 
+  const [search, setSearch] = React.useState('');
 
   return (
     <div className="wrapper">
       <div className="container">
         <div className="content">
-          <header className='header'>
-            <Link to="/" className="header_logo">
-              <div className="header_icon">
-                <img className='logo_img' src={logoPng} alt="logo_img" />
-              </div>
-              <div className='logo_text'>
-                <h4>ALL T-SHIRTS</h4>
-                <p>Best T-shirts all in one place</p>
-              </div>
-
-            </Link>
-            <div className='search'>
-              <input className='search_input' type="text" placeholder='search...' />
-            </div>
-            <div className="cart_wrapper">
-              <Link to='/cart' className="cart">
-                <p>$4050</p>
-                <p>|</p>
-                <img className='cart_img' src={cartIcon} alt="cart_logo" />
-                <b>5</b>
-              </Link>
-            </div>
-          </header>
+          <Header/>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/cart' element={<Cart />} />
           </Routes>
         </div>
-
       </div>
     </div>
   );

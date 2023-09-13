@@ -9,6 +9,7 @@ const Home = () => {
    const [categoryType, setCategoryType] = React.useState(0);
    const [sortType, setSortType] = React.useState('name');
 
+
    useEffect(() => {
       fetch(`https://64efad78219b3e2873c4c415.mockapi.io/items?${categoryType ? `category=${categoryType}` : ''}&sortBy=${sortType}`)
          .then((res) => res.json())
