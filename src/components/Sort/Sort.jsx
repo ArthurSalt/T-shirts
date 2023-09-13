@@ -2,14 +2,14 @@ import React from 'react';
 
 import './Sort.css'
 
-const Sort = () => {
+const Sort = ({sortType, setSortType}) => {
    const [modal, setModal] = React.useState(false);
-   const [sortType, setSortType] = React.useState(0);
+   
 
-   const list = ['name', 'popularity', 'price'];
+   const list = ['name', 'rating', 'price'];
 
-   const onSelectedSort = (idx) => {
-      setSortType(idx);
+   const onSelectedSort = (type) => {
+      setSortType(type);
       setModal(false)
    }
 
@@ -17,16 +17,15 @@ const Sort = () => {
       <div className="sort">
          <p>Sort by <span onClick={() => {
             setModal(!modal)
-            console.log(modal)
          }
-         } className='sort_type'>{list[sortType]}</span></p>
+         } className='sort_type'>{sortType}</span></p>
 
 
          {modal && (
             <ul className='sort_popup'>
                {list.map((type, idx) => (
-                  <li onClick={() => onSelectedSort(idx)}
-                     className={sortType == idx ? 'active' : ''}>
+                  <li key={type} onClick={() => onSelectedSort(type)}
+                     className={sortType == type ? 'active' : ''}>
                      {type}
                   </li>))}
             </ul>

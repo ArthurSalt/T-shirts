@@ -1,23 +1,27 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+
+import styles from './ItemCard.module.scss';
 
 
-const ItemCard = ({ name, imageUrl, price, sizes, category }) => {
+
+const ItemCard = ({ name, imageUrl, price, sizes, category, rating }) => {
+
 
 
 
    return (
-      <div className='item_card'>
-         <img className='item_img' src={imageUrl} alt="" />
-         <p className='item_title'>{name}</p>
-         <p className='item_type'>{category}</p>
-         <div className='item_controls'>
-            <div className='item_size_row'>
-               {sizes.map(size => <li className='size'>{size}</li>)}
+      <div className={styles.item}>
+         <img className={styles.item_img} src={imageUrl} alt="" />
+         <p className={styles.item_title}>{name}</p>
+         <p className={styles.item_rating}>Rating: {rating}</p>
+         <div className={styles.item_controls}>
+            <div className={styles.item_size_row}>
+               {sizes.map(size => <li className={styles.size}>{size}</li>)}
             </div>
          </div>
-         <div className='item_buyMenu'>
-            <div className='item_price'>{price}$</div>
-            <button className="item_addButton"> + Add to cart 0</button>
+         <div className={styles.item_buyMenu}>
+            <div className={styles.item_price}>{price}$</div>
+            <button className={styles.item_addButton}> + Add to cart 0</button>
          </div>
       </div>
    );
