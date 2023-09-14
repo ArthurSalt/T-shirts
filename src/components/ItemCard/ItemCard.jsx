@@ -4,7 +4,7 @@ import styles from './ItemCard.module.scss';
 
 
 
-const ItemCard = ({ name, imageUrl, price, sizes, category, rating }) => {
+const ItemCard = ({ name, imageUrl, price, sizes, rating }) => {
 
 
 
@@ -16,7 +16,7 @@ const ItemCard = ({ name, imageUrl, price, sizes, category, rating }) => {
          <p className={styles.item_rating}>Rating: {rating}</p>
          <div className={styles.item_controls}>
             <div className={styles.item_size_row}>
-               {sizes.map(size => <li className={styles.size}>{size}</li>)}
+               {sizes.map(size => <li key={size} className={styles.size}>{size}</li>)}
             </div>
          </div>
          <div className={styles.item_buyMenu}>

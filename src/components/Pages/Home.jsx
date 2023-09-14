@@ -26,7 +26,7 @@ const Home = () => {
             <h1 className='items_list_name'>All T-Shirts</h1>
             <div className="items_list">
                {items.map(obj =>
-                  <ItemCard {...obj} />)}
+                  <ItemCard key={obj.id} {...obj} />)}
             </div>
          </section>
       </>
