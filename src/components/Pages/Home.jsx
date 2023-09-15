@@ -4,17 +4,20 @@ import Category from '../Category/Category';
 import Sort from '../Sort/Sort';
 import ItemCard from '../ItemCard/ItemCard';
 
-const Home = () => {
+const Home = ({search}) => {
    const [items, setItems] = React.useState([]);
    const [categoryType, setCategoryType] = React.useState(0);
    const [sortType, setSortType] = React.useState('name');
 
+   const url = 'https://64efad78219b3e2873c4c415.mockapi.io/items?' + 
+   `${categoryType ? `category=${categoryType}` : ''}` + 
+   `&sortBy=${sortType}`;
 
    useEffect(() => {
-      fetch(`https://64efad78219b3e2873c4c415.mockapi.io/items?${categoryType ? `category=${categoryType}` : ''}&sortBy=${sortType}`)
+      fetch(url)
          .then((res) => res.json())
          .then((data) => setItems(data));
-   }, [categoryType, sortType])
+   }, [categoryType, sortType, search])
 
    return (
       <>
@@ -25,7 +28,9 @@ const Home = () => {
          <section className='items'>
             <h1 className='items_list_name'>All T-Shirts</h1>
             <div className="items_list">
-               {items.map(obj =>
+               {items
+               .filter(obj => obj.name.toLowerCase().includes(search.toLowerCase()))
+               .map(obj =>
                   <ItemCard key={obj.id} {...obj} />)}
             </div>
          </section>

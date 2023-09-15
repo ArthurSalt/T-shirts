@@ -26,9 +26,9 @@ function App() {
     <div className="wrapper">
       <div className="container">
         <div className="content">
-          <Header/>
+          <Header search={search} setSearch={setSearch}/>
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<Home search={search}/>} />
             <Route path='/cart' element={<Cart />} />
           </Routes>
         </div>
