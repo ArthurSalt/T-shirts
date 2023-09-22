@@ -1,15 +1,18 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {setSortType} from '../../redux/slices/filterSlice'
 
 import './Sort.css'
 
-const Sort = ({sortType, setSortType}) => {
+const Sort = () => {
    const [modal, setModal] = React.useState(false);
-   
+   const sortType = useSelector(state => state.filter.sortType);
+   const dispatch = useDispatch();
 
    const list = ['name', 'rating', 'price'];
 
    const onSelectedSort = (type) => {
-      setSortType(type);
+      dispatch(setSortType(type));
       setModal(false)
    }
 

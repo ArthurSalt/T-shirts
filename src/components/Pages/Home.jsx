@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+import {useSelector} from 'react-redux';
 
 import Category from '../Category/Category';
 import Sort from '../Sort/Sort';
 import ItemCard from '../ItemCard/ItemCard';
-
 import Pagination from '../Pagination/Pagination';
+
 
 const Home = ({ search }) => {
    const [items, setItems] = useState([]);
-   const [categoryType, setCategoryType] = useState(0);
-   const [sortType, setSortType] = useState('name');
+   const categoryType = useSelector(state => state.filter.categoryType)
+   const sortType = useSelector(state => state.filter.sortType)
    const [currentPage, setCurrentPage] = useState(1);
    const [itemsPerPage, setItemsPerPage] = useState(10);
 
@@ -17,24 +20,24 @@ const Home = ({ search }) => {
    const firstItem = lastItem - itemsPerPage;
    const currentItems = items.slice(firstItem, lastItem);
 
-
    const url = 'https://64efad78219b3e2873c4c415.mockapi.io/items?' +
       `${categoryType ? `category=${categoryType}` : ''}` +
       `&sortBy=${sortType}`;
 
    useEffect(() => {
-      fetch(url)
-         .then((res) => res.json())
-         .then((data) => setItems(data));
 
+      axios.get(url).then((res) => setItems(res.data))
       setCurrentPage(1)
+
    }, [categoryType, sortType, search])
+
+
 
    return (
       <>
          <section className='content_top'>
-            <Category categoryType={categoryType} setCategoryType={setCategoryType} />
-            <Sort sortType={sortType} setSortType={setSortType} />
+            <Category/>
+            <Sort/>
          </section>
          <section className='items'>
             <h1 className='items_list_name'>All T-Shirts</h1>
