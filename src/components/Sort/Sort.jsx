@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {setSortType} from '../../redux/slices/filterSlice'
+import { setSortType } from '../../redux/slices/filterSlice'
 
 import './Sort.css'
 
@@ -26,14 +26,13 @@ const Sort = () => {
 
          {modal && (
             <ul className='sort_popup'>
-               {list.map((type, idx) => (
+               {list.map(type => (
                   <li key={type} onClick={() => onSelectedSort(type)}
                      className={sortType == type ? 'active' : ''}>
                      {type}
                   </li>))}
             </ul>
          )}
-
       </div>
    );
 }

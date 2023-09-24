@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import Category from '../Category/Category';
 import Sort from '../Sort/Sort';
@@ -18,7 +18,10 @@ const Home = ({ search }) => {
 
    const lastItem = itemsPerPage * currentPage;
    const firstItem = lastItem - itemsPerPage;
-   const currentItems = items.slice(firstItem, lastItem);
+   const searchResult = items.filter(obj => obj.name.toLowerCase().includes(search.toLowerCase()));
+   const searchActive = search ? searchResult : items;
+   const currentItems = searchActive.slice(firstItem, lastItem);
+   
 
    const url = 'https://64efad78219b3e2873c4c415.mockapi.io/items?' +
       `${categoryType ? `category=${categoryType}` : ''}` +
@@ -28,7 +31,6 @@ const Home = ({ search }) => {
 
       axios.get(url).then((res) => setItems(res.data))
       setCurrentPage(1)
-
    }, [categoryType, sortType, search])
 
 
@@ -36,20 +38,18 @@ const Home = ({ search }) => {
    return (
       <>
          <section className='content_top'>
-            <Category/>
-            <Sort/>
+            <Category />
+            <Sort />
          </section>
          <section className='items'>
             <h1 className='items_list_name'>All T-Shirts</h1>
             <div className="items_list">
-               {currentItems
-                  .filter(obj => obj.name.toLowerCase().includes(search.toLowerCase()))
-                  .map(obj =>
-                     <ItemCard key={obj.id} {...obj} />)}
+               {currentItems.map(obj =>
+                  <ItemCard key={obj.id} {...obj} />)}
             </div>
          </section>
          <Pagination
-            items={items}
+            items={searchActive}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
             itemsPerPage={itemsPerPage} />

@@ -2,14 +2,14 @@ import React from 'react';
 
 import './Pagination.scss'
 
-const Pagination = ({items, currentPage, setCurrentPage, itemsPerPage}) => {
+const Pagination = ({ items, currentPage, setCurrentPage, itemsPerPage }) => {
    const pages = [];
 
-   for(let i = 1; i <= Math.ceil(items.length / itemsPerPage); i++) {
+   for (let i = 1; i <= Math.ceil(items.length / itemsPerPage); i++) {
       pages.push(i);
    }
 
-   return ( 
+   return (
       <div className='pagination'>
          <ul className='pages_row'>
             {pages.map((num, i) => (
@@ -17,7 +17,7 @@ const Pagination = ({items, currentPage, setCurrentPage, itemsPerPage}) => {
             ))}
          </ul>
       </div>
-    );
+   );
 }
- 
+
 export default Pagination;

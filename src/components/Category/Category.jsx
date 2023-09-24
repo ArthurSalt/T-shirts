@@ -9,8 +9,6 @@ const Category = () => {
 
    const categoryType = useSelector(state => state.filter.categoryType);
    const dispatch = useDispatch();
-
-   console.log(categoryType)
    
    return (
       <ul className='categories'>
