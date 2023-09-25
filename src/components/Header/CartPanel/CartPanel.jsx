@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 import cartIcon from '../../../assets/img/cart_icon.png';
 
-import styles from './Cart.module.scss'
+import styles from './CartPanel.module.scss'
 
-const Cart = () => {
+const CartPanel = () => {
    return (
       <div className={styles.cart_wrapper}>
          <Link to='/cart' className={styles.cart}>
@@ -19,4 +19,4 @@ const Cart = () => {
    );
 }
 
-export default Cart;
+export default CartPanel

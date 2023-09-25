@@ -1,21 +1,13 @@
 import React from 'react';
 
 import { Routes, Route } from 'react-router-dom';
-
-
-
 // components
 import Home from './components/Pages/Home';
 import Cart from './components/Pages/Cart';
 import Header from './components/Header/Header';
-
 // styles
 import './reset.css';
 import './App.css';
-
-
-
-
 
 
 function App() {

@@ -44,6 +44,10 @@
             background-color: rgba(111, 111, 111, 0.487);
          }
       }
+
+      .active {
+         background-color: #97fd37;
+      }
    }
 
    &_buyMenu {
@@ -66,5 +70,7 @@
       cursor: pointer;
    }
 }
+
+
 
 
