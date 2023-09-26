@@ -1,5 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { clearCart } from '../../redux/slices/cartSlice';
 
 import cartIcon from '../../assets/img/cart_icon.png';
 
@@ -10,7 +12,8 @@ import './Cart.scss'
 export const Cart = () => {
 
    const items = useSelector(store => store.cart.items)
-   console.log(items)
+   const totalCount = useSelector(store => store.cart.totalCount)
+   const dispatch = useDispatch()
 
    return (
       <div className='cart_wrapper'>
@@ -20,11 +23,9 @@ export const Cart = () => {
                <h1 className='cart_title'>My Cart</h1>
             </div>
             <div>
-               <p className='cart_clear'>x clear cart</p>
+               <p onClick={() => dispatch(clearCart())} className='cart_clear'>x clear cart</p>
             </div>
-
          </div>
-
          <ul className="cart_list">
             {items.map(item => <CartItem {...item} />
             )}

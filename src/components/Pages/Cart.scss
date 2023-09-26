@@ -10,12 +10,12 @@
       display: flex;
       justify-content: space-between;
       padding: 20px;
-   }   
+   }
 
    &_head_left {
       display: flex;
       align-items: center;
-   }   
+   }
 
    &_logo {
       width: 50px;
@@ -32,23 +32,23 @@
       opacity: 0.5;
       cursor: pointer;
    }
-   
+
    &_item {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px;
-   
+
       &_head {
          display: flex;
          width: 50%;
       }
-   
+
       &_img {
          width: 80px;
          height: 80px;
       }
-   
+
       &_desc {
          display: flex;
          flex-direction: column;
@@ -62,17 +62,35 @@
 
       &_size {
          font-size: 16px;
+         padding: 5px;
+         border-radius: 10px;
          background-color: #97fd37;
          width: 70px;
       }
-   
+
       &_amount {
          display: flex;
+         justify-content: center;
+         font-size: 22px;
+         font-weight: 600;
+
+         color: rgb(255, 75, 75);
+
+         p {
+            padding: 10px;
+            cursor: pointer;
+         }
       }
 
       &_price {
          font-size: 18px;
          font-weight: 500;
+      }
+
+      &_remove {
+         width: 20px;
+         height: 20px;
+         cursor: pointer;
       }
    }
 }
