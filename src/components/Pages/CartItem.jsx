@@ -1,15 +1,21 @@
 import React from 'react';
 
 import { useDispatch } from 'react-redux'
-import { removeItem } from '../../redux/slices/cartSlice';
+import { removeItem, minusItem, addItem } from '../../redux/slices/cartSlice';
 
 import deleteIcon from '../../assets/img/delete_icon.png';
 
 import './Cart.scss'
 
-const CartItem = ({ id, name, imageUrl, price, size }) => {
+const CartItem = ({ id, name, imageUrl, price, size, count }) => {
 
    const dispatch = useDispatch();
+
+   const onClickRemove = () => {
+      if (window.confirm('Are you sure you want to remove item?')) {
+        dispatch(removeItem(id));
+      }
+   }
 
    return (
       <li className='cart_item'>
@@ -23,12 +29,12 @@ const CartItem = ({ id, name, imageUrl, price, size }) => {
             </div>
          </div>
          <div className="cart_item_amount">
-            <p>-</p>
-            <p>2</p>
-            <p>+</p>
+            <p onClick={() => dispatch(minusItem(id))}>-</p>
+            <span>{count}</span>
+            <p onClick={() => dispatch(addItem({id,}))}>+</p>
          </div>
-         <div className='cart_item_price'>{price}$</div>
-         <div onClick={() => dispatch(removeItem(id))} >
+         <div className='cart_item_price'>{price*count}$</div>
+         <div onClick={onClickRemove} >
             <img className="cart_item_remove" src={deleteIcon} alt="" />
          </div>
       </li>

@@ -69,6 +69,14 @@
    
       cursor: pointer;
    }
+
+   &_added {
+      border: 1px solid #1abf18;
+      border-radius: 10px;
+      color: #1abf18;
+
+      cursor: pointer;
+   }
 }
 
 

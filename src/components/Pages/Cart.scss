@@ -33,6 +33,32 @@
       cursor: pointer;
    }
 
+   &_info {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+
+      p {
+         font-size: 22px;
+         font-weight: 600;
+      }
+   }
+
+   &_total {
+      color: #fd0e0e;
+   }
+
+   &_empty {
+      text-align: center;
+      padding: 30px;
+      font-size: 32px;
+      font-weight: 600;
+   }
+
+
+
+
+
    &_item {
       display: flex;
       justify-content: space-between;
@@ -74,11 +100,14 @@
          font-size: 22px;
          font-weight: 600;
 
-         color: rgb(255, 75, 75);
-
-         p {
+         span, p {
             padding: 10px;
             cursor: pointer;
+         }
+
+         p {
+            color: rgb(255, 75, 75);
+            font-size: 22px;
          }
       }
 
@@ -88,8 +117,14 @@
       }
 
       &_remove {
-         width: 20px;
-         height: 20px;
+         width: 18px;
+         height: 18px;
+         opacity: 0.5;
+         cursor: pointer;
+      }
+
+      &_remove:hover {
+         opacity: 1;
          cursor: pointer;
       }
    }

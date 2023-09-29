@@ -11,9 +11,15 @@ import './Cart.scss'
 
 export const Cart = () => {
 
-   const items = useSelector(store => store.cart.items)
-   const totalCount = useSelector(store => store.cart.totalCount)
+   const { items, totalPrice, itemsCount } = useSelector(store => store.cart)
    const dispatch = useDispatch()
+
+   const onClickClear = () => {
+      if (window.confirm('Are you sure you want to clear cart?')) {
+         dispatch(clearCart());
+      }
+   }
+
 
    return (
       <div className='cart_wrapper'>
@@ -23,13 +29,18 @@ export const Cart = () => {
                <h1 className='cart_title'>My Cart</h1>
             </div>
             <div>
-               <p onClick={() => dispatch(clearCart())} className='cart_clear'>x clear cart</p>
+               <p onClick={onClickClear} className='cart_clear'>x clear cart</p>
             </div>
          </div>
          <ul className="cart_list">
-            {items.map(item => <CartItem {...item} />
-            )}
+            {items.length
+               ? items.map(item => <CartItem {...item} />)
+               : <p className='cart_empty'>Cart is empty.</p>}
          </ul>
+         <div className="cart_info">
+            <p>Items in cart: {itemsCount}</p>
+            <p>Total: <span className='cart_total'>${totalPrice}</span></p>
+         </div>
       </div>
    );
 }

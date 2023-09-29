@@ -9,16 +9,15 @@ import styles from './CartPanel.module.scss'
 
 const CartPanel = () => {
 
-   const totalCount = useSelector(state => state.cart.totalCount);
-   const items = useSelector(state => state.cart.items);
+   const {items, totalPrice, itemsCount} = useSelector(state => state.cart);
 
    return (
       <div className={styles.cart_wrapper}>
          <Link to='/cart' className={styles.cart}>
-            <p>${totalCount}</p>
+            <p>${totalPrice}</p>
             <p>|</p>
             <img className={styles.cart_img} src={cartIcon} alt="cart_logo" />
-            <b>{items.length}</b>
+            <b>{itemsCount}</b>
          </Link>
       </div>
    );
