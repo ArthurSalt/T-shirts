@@ -1,26 +1,24 @@
 import React from 'react';
 
 import { Routes, Route } from 'react-router-dom';
-// components
+
 import Home from './components/Pages/Home';
 import Cart from './components/Pages/Cart';
 import Header from './components/Header/Header';
-// styles
+
 import './reset.css';
 import './App.css';
 
 
 function App() {
 
-  const [search, setSearch] = React.useState('');
-
   return (
     <div className="wrapper">
       <div className="container">
         <div className="content">
-          <Header search={search} setSearch={setSearch}/>
+          <Header />
           <Routes>
-            <Route path='/' element={<Home search={search}/>} />
+            <Route path='/' element={<Home />} />
             <Route path='/cart' element={<Cart />} />
           </Routes>
         </div>

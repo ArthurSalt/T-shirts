@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchItems } from '../../redux/slices/getItemsSlice';
+import { setCurrentPage } from '../../redux/slices/paginationSlice';
 
 import Category from '../Category/Category';
 import Sort from '../Sort/Sort';
@@ -9,29 +10,32 @@ import ItemCard from '../ItemCard/ItemCard';
 import Pagination from '../Pagination/Pagination';
 
 
-const Home = ({ search }) => {
-   const [items, setItems] = useState([]);
-   const categoryType = useSelector(state => state.filter.categoryType)
-   const sortType = useSelector(state => state.filter.sortType)
-   const [currentPage, setCurrentPage] = useState(1);
-   const [itemsPerPage, setItemsPerPage] = useState(10);
+const Home = () => {
+   const dispatch = useDispatch();
+
+   const items = useSelector(state => state.items.items);
+   const {categoryType, sortType, searchValue} = useSelector(state => state.filter);
+   const {currentPage, itemsPerPage} = useSelector(state => state.pages);
 
    const lastItem = itemsPerPage * currentPage;
    const firstItem = lastItem - itemsPerPage;
-   const searchResult = items.filter(obj => obj.name.toLowerCase().includes(search.toLowerCase()));
-   const searchActive = search ? searchResult : items;
+   const searchResult = items.filter(obj => obj.name.toLowerCase().includes(searchValue.toLowerCase()));
+   const searchActive = searchValue ? searchResult : items;
    const currentItems = searchActive.slice(firstItem, lastItem);
-   
 
-   const url = 'https://64efad78219b3e2873c4c415.mockapi.io/items?' +
-      `${categoryType ? `category=${categoryType}` : ''}` +
-      `&sortBy=${sortType}`;
+
+   const getItems = async () => {
+      try {
+         dispatch(fetchItems({ categoryType, sortType }));
+         dispatch(setCurrentPage(1));
+      } catch (error) {
+         alert('Failed to get data from server')
+      }
+   }
 
    useEffect(() => {
-
-      axios.get(url).then((res) => setItems(res.data))
-      setCurrentPage(1)
-   }, [categoryType, sortType, search])
+      getItems()
+   }, [categoryType, sortType, searchValue])
 
 
 
@@ -50,9 +54,7 @@ const Home = ({ search }) => {
          </section>
          <Pagination
             items={searchActive}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-            itemsPerPage={itemsPerPage} />
+         />
       </>
    );
 }

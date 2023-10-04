@@ -11,8 +11,11 @@ import './Cart.scss'
 
 export const Cart = () => {
 
-   const { items, totalPrice, itemsCount } = useSelector(store => store.cart)
+   const { items, totalPrice } = useSelector(store => store.cart)
+
    const dispatch = useDispatch()
+   
+   const itemsCount = items.reduce((sum, obj) => sum += obj.count, 0);
 
    const onClickClear = () => {
       if (window.confirm('Are you sure you want to clear cart?')) {

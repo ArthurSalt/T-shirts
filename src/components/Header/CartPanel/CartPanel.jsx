@@ -9,7 +9,9 @@ import styles from './CartPanel.module.scss'
 
 const CartPanel = () => {
 
-   const {items, totalPrice, itemsCount} = useSelector(state => state.cart);
+   const {items, totalPrice} = useSelector(state => state.cart);
+
+   const itemsCount = items.reduce((sum, obj) => sum += obj.count, 0);
 
    return (
       <div className={styles.cart_wrapper}>

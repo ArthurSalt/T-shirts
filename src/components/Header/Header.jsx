@@ -4,11 +4,11 @@ import Logo from './Logo/Logo';
 import Search from './Search/Search';
 import CartPanel from './CartPanel/CartPanel';
 
-const Header = ({search, setSearch}) => {
+const Header = () => {
    return (
       <header className='header'>
          <Logo />
-         <Search search={search} setSearch={setSearch}/>
+         <Search />
          <CartPanel/>
       </header>
    );
