@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { clearCart } from '../../redux/slices/cartSlice';
+import { clearCart } from '../../../redux/slices/cartSlice';
 
-import cartIcon from '../../assets/img/cart_icon.png';
+import cartIcon from '../../../assets/img/cart_icon.png';
 
 import CartItem from './CartItem';
 

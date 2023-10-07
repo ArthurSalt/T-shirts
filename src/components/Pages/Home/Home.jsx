@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchItems } from '../../redux/slices/getItemsSlice';
-import { setCurrentPage } from '../../redux/slices/paginationSlice';
+import { fetchItems } from '../../../redux/slices/getItemsSlice';
+import { setCurrentPage } from '../../../redux/slices/paginationSlice';
 
-import Category from '../Category/Category';
-import Sort from '../Sort/Sort';
-import ItemCard from '../ItemCard/ItemCard';
-import Pagination from '../Pagination/Pagination';
+import Category from './Filter/Category/Category';
+import Sort from './Filter/Sort/Sort';
+import ItemCard from './ItemCard/ItemCard';
+import Pagination from './Pagination/Pagination';
 
 
 const Home = () => {
    const dispatch = useDispatch();
 
    const items = useSelector(state => state.items.items);
-   const {categoryType, sortType, searchValue} = useSelector(state => state.filter);
-   const {currentPage, itemsPerPage} = useSelector(state => state.pages);
+   const { categoryType, sortType, searchValue } = useSelector(state => state.filter);
+   const { currentPage, itemsPerPage } = useSelector(state => state.pages);
 
    const lastItem = itemsPerPage * currentPage;
    const firstItem = lastItem - itemsPerPage;
@@ -34,8 +34,8 @@ const Home = () => {
    }
 
    useEffect(() => {
-      getItems()
-   }, [categoryType, sortType, searchValue])
+      getItems();
+   }, [categoryType, sortType])
 
 
 

@@ -8,6 +8,11 @@
    &_img {
       width: 200px;
       height: 200px;
+
+      &:hover {
+         scale: 1.02;
+         box-shadow: 1px 1px 2px grey;
+      }
    }
 
    &_title {
@@ -36,7 +41,7 @@
       .size {
          margin: 5px;
          padding: 2px 7px;
-      
+
          background-color: rgb(197, 197, 197);
          cursor: pointer;
 
@@ -61,12 +66,12 @@
       font-size: 18px;
       font-weight: 500;
    }
-   
+
    &_addButton {
       border: 1px solid red;
       border-radius: 10px;
       color: red;
-   
+
       cursor: pointer;
    }
 
@@ -78,7 +83,3 @@
       cursor: pointer;
    }
 }
-
-
-
-

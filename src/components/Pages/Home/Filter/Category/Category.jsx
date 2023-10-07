@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCategoryType } from '../../redux/slices/filterSlice';
+import { setCategoryType } from '../../../../../redux/slices/filterSlice';
 
 import './Category.css';
 

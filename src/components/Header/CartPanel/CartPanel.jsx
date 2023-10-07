@@ -1,20 +1,21 @@
 import React from 'react';
 
-import {useSelector} from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Link, useLocation } from 'react-router-dom';
 
 import cartIcon from '../../../assets/img/cart_icon.png';
 
 import styles from './CartPanel.module.scss'
 
 const CartPanel = () => {
+   const location = useLocation();
 
-   const {items, totalPrice} = useSelector(state => state.cart);
+   const { items, totalPrice } = useSelector(state => state.cart);
 
    const itemsCount = items.reduce((sum, obj) => sum += obj.count, 0);
 
    return (
-      <div className={styles.cart_wrapper}>
+      location.pathname !== '/cart' && <div className={styles.cart_wrapper}>
          <Link to='/cart' className={styles.cart}>
             <p>${totalPrice}</p>
             <p>|</p>

@@ -11,11 +11,15 @@ export const paginationSlice = createSlice({
    reducers: {
       setCurrentPage(state, action) {
          state.currentPage = action.payload;
+      },
+
+      setItemsPerPage(state, action) {
+         state.itemsPerPage = action.payload;
       }
    },
 })
 
 
-export const { setCurrentPage } = paginationSlice.actions
+export const { setCurrentPage, setItemsPerPage } = paginationSlice.actions
 
 export default paginationSlice.reducer

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setSortType } from '../../redux/slices/filterSlice'
+import { setSortType } from '../../../../../redux/slices/filterSlice'
 
 import './Sort.css'
 

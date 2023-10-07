@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { useDispatch } from 'react-redux'
-import { removeItem, minusItem, addItem } from '../../redux/slices/cartSlice';
+import { removeItem, minusItem, addItem } from '../../../redux/slices/cartSlice';
 
-import deleteIcon from '../../assets/img/delete_icon.png';
+import deleteIcon from '../../../assets/img/delete_icon.png';
 
 import './Cart.scss'
 

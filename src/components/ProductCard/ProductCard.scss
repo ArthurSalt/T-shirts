@@ -1,0 +1,36 @@
+.product {
+   &_card {
+      display: flex;
+      justify-content: left;
+      padding: 20px 0;
+   }
+
+   &_img {
+      width: 200px;
+      height: 200px;
+   }
+
+   &_info {
+      padding: 10px 20px;
+
+      p {
+         padding: 5px 0;
+      }
+   }
+
+   &_name {
+      font-size: 24px;
+      font-weight: 600;
+   }
+
+   &_rating {
+      font-size: 18px;
+      font-weight: 600;
+      color: rgb(255, 183, 0);
+   }
+
+   &_price {
+      font-size: 24px;
+      font-weight: 600;
+   }
+}

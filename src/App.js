@@ -2,9 +2,10 @@ import React from 'react';
 
 import { Routes, Route } from 'react-router-dom';
 
-import Home from './components/Pages/Home';
-import Cart from './components/Pages/Cart';
+import Home from './components/Pages/Home/Home';
+import Cart from './components/Pages/Cart/Cart';
 import Header from './components/Header/Header';
+import ProductCard from './components/ProductCard/ProductCard';
 
 import './reset.css';
 import './App.css';
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='/cart/:id' element={<ProductCard />} />
           </Routes>
         </div>
       </div>
