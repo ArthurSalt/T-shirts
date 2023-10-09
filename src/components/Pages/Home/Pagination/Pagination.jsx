@@ -29,9 +29,9 @@ const Pagination = ({ items }) => {
             ))}
          </ul>
 
-         <div className="pages_itemsperpage">
+         <div className="pages_row"><span>Items per page: </span>
             {[5, 10, 20].map(num => (
-               <li onClick={() => onPerPageClick(num)} key={num}>{num}</li>
+               <li onClick={() => onPerPageClick(num)} className={itemsPerPage === num ? 'active page' : 'page'} key={num}>{num}</li>
             ))}
          </div>
       </div>

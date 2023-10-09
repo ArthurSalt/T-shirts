@@ -14,7 +14,7 @@ const Home = () => {
    const dispatch = useDispatch();
 
    const items = useSelector(state => state.items.items);
-   const { categoryType, sortType, searchValue } = useSelector(state => state.filter);
+   const { categoryType, sortType, sortOrderType, searchValue } = useSelector(state => state.filter);
    const { currentPage, itemsPerPage } = useSelector(state => state.pages);
 
    const lastItem = itemsPerPage * currentPage;
@@ -26,7 +26,7 @@ const Home = () => {
 
    const getItems = async () => {
       try {
-         dispatch(fetchItems({ categoryType, sortType }));
+         dispatch(fetchItems({ categoryType, sortType, sortOrderType }));
          dispatch(setCurrentPage(1));
       } catch (error) {
          alert('Failed to get data from server')
@@ -35,7 +35,7 @@ const Home = () => {
 
    useEffect(() => {
       getItems();
-   }, [categoryType, sortType])
+   }, [categoryType, sortType, sortOrderType])
 
 
 

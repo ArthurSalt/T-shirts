@@ -1,22 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import {useSelector, useDispatch} from 'react-redux'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-import { addItem } from '../../redux/slices/cartSlice';
-
 import SizeBar from '../comps/SizeBar/SizeBar';
+import AddButton from '../AddButton';
 
 import './ProductCard.scss'
 
 const ProductCard = () => {
-   const dispatch = useDispatch();
    const { id } = useParams();
 
    const [item, setItem] = useState();
    const [activeSize, setActiveSize] = useState('XL');
-   const itemCount = useSelector(state => state.cart.items.find(obj => obj.id === id))
-   const addedAmount = itemCount ? itemCount.count : '0';
 
    useEffect(() => {
       async function fetchItems() {
@@ -28,7 +23,7 @@ const ProductCard = () => {
          }
       }
       fetchItems()
-   }, [])
+   }, [id])
 
    if (!item) {
       return "Loading..."
@@ -50,7 +45,7 @@ const ProductCard = () => {
                   setActiveSize={setActiveSize} />
             </div>
             <div className="product-buy">
-               <button onClick={() => dispatch(addItem({...item, count: 1, size: activeSize}))} >{addedAmount > 0 ? `Items in cart: ${addedAmount}` : `+ Add to cart`}</button>
+               <AddButton newItem={{ ...item, count: 1, size: activeSize }} />
             </div>
          </div>
       </div>

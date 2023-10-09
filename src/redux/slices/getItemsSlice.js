@@ -4,10 +4,10 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 export const fetchItems = createAsyncThunk('fetchItems/fetchItemsStatus',
    async (params) => {
-      const { categoryType, sortType } = params;
+      const { categoryType, sortType, sortOrderType } = params;
       const url = 'https://64efad78219b3e2873c4c415.mockapi.io/items?' +
          `${categoryType ? `category=${categoryType}` : ''}` +
-         `&sortBy=${sortType}`;
+         `&sortBy=${sortType}&order=${sortOrderType}`;
 
       const { data } = await axios.get(url)
 

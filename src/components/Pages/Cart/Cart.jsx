@@ -37,7 +37,7 @@ export const Cart = () => {
          </div>
          <ul className="cart_list">
             {items.length
-               ? items.map(item => <CartItem {...item} />)
+               ? items.map(item => <CartItem key={item.id + item.size} {...item} />)
                : <p className='cart_empty'>Cart is empty.</p>}
          </ul>
          <div className="cart_info">

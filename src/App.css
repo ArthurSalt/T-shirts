@@ -49,3 +49,19 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
+.item_addButton {
+  border: 1px solid red;
+  border-radius: 10px;
+  color: red;
+
+  cursor: pointer;
+}
+
+.item_added {
+  border: 1px solid #1abf18;
+  border-radius: 10px;
+  color: #1abf18;
+
+  cursor: pointer;
+}
