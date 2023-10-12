@@ -58,10 +58,11 @@
   cursor: pointer;
 }
 
-.item_added {
-  border: 1px solid #1abf18;
+.item_addedButton {
+  border: 1px solid #029200;
   border-radius: 10px;
-  color: #1abf18;
+  color: #fff;
+  background-color: #1abf18;
 
   cursor: pointer;
 }

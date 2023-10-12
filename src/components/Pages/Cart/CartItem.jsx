@@ -26,6 +26,7 @@ const CartItem = ({ id, name, imageUrl, price, size, count }) => {
             <div className="cart_item_desc">
                <h1 className='cart_item_name'>{name}</h1>
                <p className='cart_item_size'>Size: {size}</p>
+               <p className='cart_item_price'>{price}$</p>
             </div>
          </div>
          <div className="cart_item_amount">
