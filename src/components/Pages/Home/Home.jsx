@@ -3,9 +3,9 @@ import { useWhyDidYouUpdate } from 'ahooks';
 import qs from 'query-string';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchItems } from '../../../redux/slices/getItemsSlice';
-import { setCurrentPage } from '../../../redux/slices/paginationSlice';
-import { setFilters } from '../../../redux/slices/filterSlice';
+import { fetchItems, setItems } from '../../../redux/slices/getItemsSlice';
+import { setCurrentPage, setItemsPerPage } from '../../../redux/slices/paginationSlice';
+import { setCategoryType, setFilters } from '../../../redux/slices/filterSlice';
 
 import Category from './Filter/Category/Category';
 import Sort from './Filter/Sort/Sort';
@@ -39,44 +39,49 @@ const Home = () => {
       try {
          setIsLoading(true)
          dispatch(fetchItems({ categoryType, sortType, sortOrderType }));
-         dispatch(setCurrentPage(1));
          setIsLoading(false);
       } catch (error) {
          alert('Failed to get data from server')
       }
-   }
+   };
+
+   useEffect(() => {
+      dispatch(setCurrentPage(1))
+   }, [categoryType])
 
    useEffect(() => {
       if (window.location.search) {
          const params = qs.parse(window.location.search.substring(1));
-         dispatch(
-            setFilters(params)
-         );
+         dispatch(setFilters(params));
+         dispatch(setCurrentPage(Number(params.page)));
+         dispatch(setItemsPerPage(Number(params.limit)));
          isSearch.current = true;
       }
    }, [])
 
-   useEffect(useCallback(() => {
+   useEffect(() => {
       if (isMounted.current) {
          const queryString = qs.stringify({
-            category: categoryType,
+            ...(categoryType ? { category: categoryType } : {}),
             sortBy: sortType,
             order: sortOrderType,
+            page: currentPage,
+            limit: itemsPerPage
          })
          navigate(`?${queryString}`)
       }
       isMounted.current = true;
-   }), [categoryType, sortType, sortOrderType])
+   }, [categoryType, sortType, sortOrderType, itemsPerPage, currentPage])
 
    useEffect(() => {
       if (!isSearch.current) {
          getItems()
       }
       isSearch.current = false;
-   }, [categoryType, sortType, sortOrderType])
+   }, [categoryType, sortType, sortOrderType, itemsPerPage, currentPage])
 
-   console.log('Home rendered')
-   useWhyDidYouUpdate('Home', { categoryType, sortType, sortOrderType, currentPage, itemsPerPage, items, searchValue });
+   // useWhyDidYouUpdate('Home', { categoryType, sortType, sortOrderType, currentPage, itemsPerPage, items, searchValue });
+
    return (
       <>
          <section className='content_top'>

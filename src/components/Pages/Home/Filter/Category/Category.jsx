@@ -9,12 +9,12 @@ const Category = () => {
 
    const categoryType = useSelector(state => state.filter.categoryType);
    const dispatch = useDispatch();
-   
+
    return (
       <ul className='categories'>
          {categories.map((category, idx) => (
             <li key={idx} onClick={() => dispatch(setCategoryType(idx))}
-            className={categoryType == idx ? 'category active' : 'category'}>
+               className={categoryType == idx ? 'category active' : 'category'}>
                {category}
             </li>
          ))}
