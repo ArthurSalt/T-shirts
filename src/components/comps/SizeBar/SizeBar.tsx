@@ -2,7 +2,13 @@ import React from 'react';
 
 import styles from './SizeBar.module.scss';
 
-const SizeBar = ({ sizes, activeSize, setActiveSize }) => {
+interface ISizeBar {
+   sizes: string[];
+   activeSize: string;
+   setActiveSize: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const SizeBar: React.FC<ISizeBar> = ({ sizes, activeSize, setActiveSize }) => {
 
    return (
       <ul className={styles.item_size_row}>

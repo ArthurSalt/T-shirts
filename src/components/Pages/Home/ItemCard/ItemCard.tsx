@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
+import { ItemT } from '../../../ProductCard/ProductCard';
 
 import SizeBar from '../../../comps/SizeBar/SizeBar';
 import AddButton from '../../../AddButton';
 
 import styles from './ItemCard.module.scss';
 
-const ItemCard = ({ id, name, imageUrl, price, sizes, rating }) => {
-   const [activeSize, setActiveSize] = useState('XL');
+const ItemCard: React.FC<ItemT> = ({ id, name, imageUrl, price, sizes, rating }) => {
+   const [activeSize, setActiveSize] = useState<string>('XL');
 
    const newItem = {
       id,

@@ -2,17 +2,22 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
+import { ICartItem, ICartSlice, selectorCart } from '../../../redux/slices/cartSlice';
+
 
 import cartIcon from '../../../assets/img/cart_icon.png';
 
 import styles from './CartPanel.module.scss'
+import { RootState } from '../../../redux/store';
 
-const CartPanel = () => {
+
+
+const CartPanel: React.FC<ICartSlice> = () => {
    const location = useLocation();
 
-   const { items, totalPrice } = useSelector(state => state.cart);
+   const { items, totalPrice } = useSelector<RootState, ICartSlice>(selectorCart);
 
-   const itemsCount = items.reduce((sum, obj) => sum += obj.count, 0);
+   const itemsCount = items.reduce((sum: number, obj: ICartItem) => sum += obj.count, 0);
 
    return (
       location.pathname !== '/cart' && <div className={styles.cart_wrapper}>

@@ -1,20 +1,19 @@
 import React, { useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setSortType, setSortOrderType } from '../../../../../redux/slices/filterSlice'
+import { setSortType, setSortOrderType, selectFilter } from '../../../../../redux/slices/filterSlice'
 
 import './Sort.css'
 
 const Sort = () => {
    const [modalSort, setModalSort] = React.useState(false);
    const [modalOrder, setModalOrder] = React.useState(false);
-   const sortRef = useRef(0);
-   const sortOrderRef = useRef(0);
-   const sortType = useSelector(state => state.filter.sortType);
-   const sortOrderType = useSelector(state => state.filter.sortOrderType);
+   const sortRef = useRef<HTMLDivElement>(null);
+   const sortOrderRef = useRef<HTMLDivElement>(null);
+   const {sortType, sortOrderType} = useSelector(selectFilter);
    const dispatch = useDispatch();
 
-   const list = ['name', 'rating', 'price'];
-   const listOrder = ['asc', 'desc'];
+   const list : string[]= ['name', 'rating', 'price'];
+   const listOrder : string[] = ['asc', 'desc'];
 
    useEffect(() => {
       document.body.addEventListener('click', handleOnClick)
@@ -30,12 +29,12 @@ const Sort = () => {
       }
    }
 
-   const onSelectedSort = (type) => {
+   const onSelectedSort = (type : string) => {
       dispatch(setSortType(type));
       setModalSort(false)
    }
 
-   const onSelectedSortOrder = (type) => {
+   const onSelectedSortOrder = (type : string) => {
       dispatch(setSortOrderType(type));
       setModalOrder(false)
    }
@@ -49,7 +48,7 @@ const Sort = () => {
                <ul className='sort_popup'>
                   {listOrder.map(type => (
                      <li key={type} onClick={() => onSelectedSortOrder(type)}
-                        className={sortOrderType == type ? 'active' : ''}>
+                        className={sortOrderType === type ? 'active' : ''}>
                         {type}
                      </li>))}
                </ul>
@@ -69,7 +68,7 @@ const Sort = () => {
                <ul className='sort_popup'>
                   {list.map(type => (
                      <li key={type} onClick={() => onSelectedSort(type)}
-                        className={sortType == type ? 'active' : ''}>
+                        className={sortType === type ? 'active' : ''}>
                         {type}
                      </li>))}
                </ul>

@@ -7,16 +7,26 @@ import AddButton from '../AddButton';
 
 import './ProductCard.scss'
 
-const ProductCard = () => {
+export interface ItemT {
+   id: number,
+   imageUrl?: string,
+   name?: string,
+   rating?: number,
+   price?: number,
+   sizes?: string[],
+   category?: number,
+}
+
+const ProductCard: React.FC = () => {
    const { id } = useParams();
 
-   const [item, setItem] = useState();
-   const [activeSize, setActiveSize] = useState('XL');
+   const [item, setItem] = useState<ItemT>();
+   const [activeSize, setActiveSize] = useState<string>('XL');
 
    useEffect(() => {
       async function fetchItems() {
          try {
-            const { data } = await axios.get(`https://64efad78219b3e2873c4c415.mockapi.io/items/${id}`);
+            const { data } = await axios.get<ItemT>(`https://64efad78219b3e2873c4c415.mockapi.io/items/${id}`);
             setItem(data)
          } catch (error) {
             alert('Error! Failed to get data from server!')
@@ -43,6 +53,11 @@ const ProductCard = () => {
                   sizes={item.sizes}
                   activeSize={activeSize}
                   setActiveSize={setActiveSize} />
+            </div>
+            <div className='product_desc'>
+               Lorem ipsum dolor sit amet consectetur adipisicing elit.
+               Iure minima suscipit nesciunt qui enim? Eos, eum quod!
+               In fugit excepturi aliquid, consequuntur vitae quidem harum tempora, ab sit at expedita?
             </div>
             <div className="product-buy">
                <AddButton newItem={{ ...item, count: 1, size: activeSize }} />

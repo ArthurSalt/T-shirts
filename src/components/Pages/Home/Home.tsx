@@ -1,11 +1,9 @@
-import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react';
-import { useWhyDidYouUpdate } from 'ahooks';
+import React, { useEffect, useState, useRef } from 'react';
 import qs from 'query-string';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchItems, setItems } from '../../../redux/slices/getItemsSlice';
-import { setCurrentPage, setItemsPerPage } from '../../../redux/slices/paginationSlice';
-import { setCategoryType, setFilters } from '../../../redux/slices/filterSlice';
+import { IGetItemsSlice, fetchItems, selectItems } from '../../../redux/slices/getItemsSlice';
+import { selectPages, setCurrentPage, setItemsPerPage } from '../../../redux/slices/paginationSlice';
+import { IFilterSlice, selectFilter, setFilters } from '../../../redux/slices/filterSlice';
 
 import Category from './Filter/Category/Category';
 import Sort from './Filter/Sort/Sort';
@@ -13,10 +11,12 @@ import ItemCard from './ItemCard/ItemCard';
 import Pagination from './Pagination/Pagination';
 import Skeleton from '../../Skeleton';
 import { useNavigate } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../../../utils/hooks';
 
 
 const Home = () => {
-   const dispatch = useDispatch();
+   const dispatch = useAppDispatch();
+   const useSelector = useAppSelector;
    const navigate = useNavigate()
    const [isLoading, setIsLoading] = useState(true);
    const isMounted = useRef(false);
@@ -24,9 +24,9 @@ const Home = () => {
 
 
 
-   const items = useSelector(state => state.items.items);
-   const { categoryType, sortType, sortOrderType, searchValue } = useSelector(state => state.filter);
-   const { currentPage, itemsPerPage } = useSelector(state => state.pages);
+   const { items } = useSelector<IGetItemsSlice>(selectItems);
+   const { categoryType, sortType, sortOrderType, searchValue } = useSelector<IFilterSlice>(selectFilter);
+   const { currentPage, itemsPerPage } = useSelector<Record<string, number>>(selectPages);
 
    const lastItem = itemsPerPage * currentPage;
    const firstItem = lastItem - itemsPerPage;
@@ -79,8 +79,6 @@ const Home = () => {
       }
       isSearch.current = false;
    }, [categoryType, sortType, sortOrderType, itemsPerPage, currentPage])
-
-   // useWhyDidYouUpdate('Home', { categoryType, sortType, sortOrderType, currentPage, itemsPerPage, items, searchValue });
 
    return (
       <>

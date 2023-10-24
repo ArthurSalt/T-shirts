@@ -1,6 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { RootState } from '../store';
 
-const initialState = {
+
+const initialState: Record<string, number> = {
    currentPage: 1,
    itemsPerPage: 10,
 }
@@ -9,17 +11,17 @@ export const paginationSlice = createSlice({
    name: 'pagination',
    initialState,
    reducers: {
-      setCurrentPage(state, action) {
+      setCurrentPage(state, action: PayloadAction<number>) {
          state.currentPage = action.payload;
       },
 
-      setItemsPerPage(state, action) {
+      setItemsPerPage(state, action: PayloadAction<number>) {
          state.itemsPerPage = action.payload;
       }
    },
 })
 
-
+export const selectPages = (state: RootState) => state.pages
 export const { setCurrentPage, setItemsPerPage } = paginationSlice.actions
 
 export default paginationSlice.reducer

@@ -1,22 +1,29 @@
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { ItemT } from '../../components/ProductCard/ProductCard';
+import { RootState } from '../store';
 
 
-export const fetchItems = createAsyncThunk('fetchItems/fetchItemsStatus',
+export const fetchItems = createAsyncThunk<ItemT[], Record<string, string | number>>(
+   'fetchItems/fetchItemsStatus',
    async (params) => {
       const { categoryType, sortType, sortOrderType } = params;
       const url = 'https://64efad78219b3e2873c4c415.mockapi.io/items?' +
          `${categoryType ? `category=${categoryType}` : ''}` +
          `&sortBy=${sortType}&order=${sortOrderType}`;
 
-      const { data } = await axios.get(url)
+      const { data } = await axios.get<ItemT[]>(url)
 
       return data;
    }
 )
 
+export interface IGetItemsSlice {
+   items: ItemT[];
+   status: string;
+}
 
-const initialState = {
+const initialState: IGetItemsSlice = {
    items: [],
    status: '',
 }
@@ -42,6 +49,6 @@ export const fetchItemsSlice = createSlice({
    }
 })
 
+export const selectItems = (state: RootState) => state.items
 
-export const { setItems } = fetchItemsSlice.actions
 export default fetchItemsSlice.reducer
