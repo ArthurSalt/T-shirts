@@ -4,12 +4,12 @@ import Logo from './Logo/Logo';
 import Search from './Search/Search';
 import CartPanel from './CartPanel/CartPanel';
 
-const Header = () => {
+const Header: React.FC = () => {
    return (
       <header className='header'>
          <Logo />
          <Search />
-         <CartPanel/>
+         <CartPanel />
       </header>
    );
 }

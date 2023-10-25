@@ -1,13 +1,10 @@
 import React from 'react';
-
-import { useSelector, useDispatch } from 'react-redux';
-
+import { useAppDispatch, useAppSelector } from '../utils/hooks';
 import { addItem } from '../redux/slices/cartSlice';
 
-
 const AddButton = ({ newItem }) => {
-   const dispatch = useDispatch();
-   const itemCount = useSelector(state => state.cart.items.filter(obj => obj.id === newItem.id).reduce((sum, obj) => sum += obj.count, 0))
+   const dispatch = useAppDispatch();
+   const itemCount = useAppSelector(state => state.cart.items.filter(obj => obj.id === newItem.id).reduce((sum, obj) => sum += obj.count, 0))
 
    return (
       <>

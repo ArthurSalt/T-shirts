@@ -1,18 +1,18 @@
 import React from 'react';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { setCurrentPage, setItemsPerPage } from '../../../../redux/slices/paginationSlice';
+import { useAppDispatch, useAppSelector } from '../../../../utils/hooks';
+import { selectPages, setCurrentPage, setItemsPerPage } from '../../../../redux/slices/paginationSlice';
 
 import './Pagination.scss'
 
 const Pagination = ({ items }) => {
 
-   const dispatch = useDispatch();
+   const dispatch = useAppDispatch();
    const pages = [];
-   const currentPage = useSelector(state => state.pages.currentPage)
-   const itemsPerPage = useSelector(state => state.pages.itemsPerPage)
+   const { currentPage } = useAppSelector(selectPages)
+   const { itemsPerPage } = useAppSelector(selectPages)
 
-   const onPerPageClick = (num) => {
+   const onPerPageClick = (num: number) => {
       dispatch(setItemsPerPage(num))
       dispatch(setCurrentPage(1))
    }

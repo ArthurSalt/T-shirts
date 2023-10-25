@@ -4,7 +4,7 @@ import { selectFilter, setCategoryType } from '../../../../../redux/slices/filte
 
 import './Category.css';
 
-const Category = () => {
+const Category: React.FC = () => {
    const categories = ['All', 'T-Shirt', 'Hoodie', 'Longsleeve', 'Sweatshirt'];
 
    const {categoryType} = useSelector(selectFilter);

@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import qs from 'query-string';
 
-import { IGetItemsSlice, fetchItems, selectItems } from '../../../redux/slices/getItemsSlice';
+import { fetchItems, selectItems } from '../../../redux/slices/getItemsSlice';
 import { selectPages, setCurrentPage, setItemsPerPage } from '../../../redux/slices/paginationSlice';
-import { IFilterSlice, selectFilter, setFilters } from '../../../redux/slices/filterSlice';
+import { selectFilter, setFilters } from '../../../redux/slices/filterSlice';
 
 import Category from './Filter/Category/Category';
 import Sort from './Filter/Sort/Sort';
@@ -14,7 +14,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../utils/hooks';
 
 
-const Home = () => {
+const Home: React.FC = () => {
    const dispatch = useAppDispatch();
    const useSelector = useAppSelector;
    const navigate = useNavigate()
@@ -24,9 +24,9 @@ const Home = () => {
 
 
 
-   const { items } = useSelector<IGetItemsSlice>(selectItems);
-   const { categoryType, sortType, sortOrderType, searchValue } = useSelector<IFilterSlice>(selectFilter);
-   const { currentPage, itemsPerPage } = useSelector<Record<string, number>>(selectPages);
+   const { items } = useSelector(selectItems);
+   const { categoryType, sortType, sortOrderType, searchValue } = useSelector(selectFilter);
+   const { currentPage, itemsPerPage } = useSelector(selectPages);
 
    const lastItem = itemsPerPage * currentPage;
    const firstItem = lastItem - itemsPerPage;

@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { useDispatch } from 'react-redux'
+import { useAppDispatch } from '../../../utils/hooks';
 import { removeItem, minusItem, addItem, ICartItem } from '../../../redux/slices/cartSlice';
 
 import deleteIcon from '../../../assets/img/delete_icon.png';
 import './Cart.scss'
 
 const CartItem: React.FC<ICartItem> = ({ id, name, imageUrl, price, size, count }) => {
-   const dispatch = useDispatch();
+   const dispatch = useAppDispatch();
 
    const onClickRemove = () => {
       if (window.confirm('Are you sure you want to remove item?')) {

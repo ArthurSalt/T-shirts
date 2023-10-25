@@ -1,20 +1,19 @@
 import React from 'react';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { ICartSlice, clearCart, selectorCart } from '../../../redux/slices/cartSlice';
+import { useAppDispatch, useAppSelector } from '../../../utils/hooks';
+import { clearCart, selectorCart } from '../../../redux/slices/cartSlice';
 
 import cartIcon from '../../../assets/img/cart_icon.png';
 
 import CartItem from './CartItem';
 
 import './Cart.scss'
-import { RootState } from '../../../redux/store';
 
 export const Cart = () => {
 
-   const { items, totalPrice } = useSelector<RootState, ICartSlice>(selectorCart)
+   const { items, totalPrice } = useAppSelector(selectorCart)
 
-   const dispatch = useDispatch()
+   const dispatch = useAppDispatch()
    
    const itemsCount = items.reduce((sum, obj) => sum += obj.count, 0);
 
