@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import { ItemT } from '../../../ProductCard/ProductCard';
-
-import SizeBar from '../../../comps/SizeBar/SizeBar';
-import AddButton from '../../../AddButton';
-
+import {SizeBar, AddButton} from '../../../index';
 import styles from './ItemCard.module.scss';
 
 const ItemCard: React.FC<ItemT> = ({ id, name, imageUrl, price, sizes, rating }) => {

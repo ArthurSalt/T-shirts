@@ -1,8 +1,6 @@
 import React from 'react';
 
-import Logo from './Logo/Logo';
-import Search from './Search/Search';
-import CartPanel from './CartPanel/CartPanel';
+import { Logo, Search, CartPanel } from '../index';
 
 const Header: React.FC = () => {
    return (

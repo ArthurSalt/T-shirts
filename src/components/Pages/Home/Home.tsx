@@ -1,18 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
-import qs from 'query-string';
+import { useNavigate } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../../../utils/hooks';
 
 import { fetchItems, selectItems } from '../../../redux/slices/getItemsSlice';
 import { selectPages, setCurrentPage, setItemsPerPage } from '../../../redux/slices/paginationSlice';
 import { selectFilter, setFilters } from '../../../redux/slices/filterSlice';
 
-import Category from './Filter/Category/Category';
-import Sort from './Filter/Sort/Sort';
-import ItemCard from './ItemCard/ItemCard';
-import Pagination from './Pagination/Pagination';
-import Skeleton from '../../Skeleton';
-import { useNavigate } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../../utils/hooks';
-
+import {Category, Sort, ItemCard, Pagination, Skeleton} from '../../index';
+import qs from 'query-string';
 
 const Home: React.FC = () => {
    const dispatch = useAppDispatch();
@@ -21,8 +16,6 @@ const Home: React.FC = () => {
    const [isLoading, setIsLoading] = useState(true);
    const isMounted = useRef(false);
    const isSearch = useRef(false);
-
-
 
    const { items } = useSelector(selectItems);
    const { categoryType, sortType, sortOrderType, searchValue } = useSelector(selectFilter);
@@ -33,7 +26,6 @@ const Home: React.FC = () => {
    const searchResult = [...items].filter(obj => obj.name.toLowerCase().includes(searchValue.toLowerCase()));
    const searchActive = searchValue ? searchResult : items;
    const currentItems = searchActive.slice(firstItem, lastItem);
-
 
    const getItems = async () => {
       try {
