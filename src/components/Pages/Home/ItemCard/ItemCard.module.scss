@@ -8,10 +8,12 @@
    &_img {
       width: 200px;
       height: 200px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px grey;
 
       &:hover {
-         scale: 1.02;
-         box-shadow: 1px 1px 2px grey;
+         scale: 1.03;
+         // box-shadow: 1px 1px 2px grey;
       }
    }
 

@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 
 import { Routes, Route } from 'react-router-dom';
 
 import Home from './components/Pages/Home/Home';
-import Cart from './components/Pages/Cart/Cart';
 import Header from './components/Header/Header';
-import ProductCard from './components/ProductCard/ProductCard';
 
 import './reset.css';
 import './App.css';
 
+const Cart = lazy(() => import(/* webpackChunkName: 'Cart' */ './components/Pages/Cart/Cart'));
+const ProductCard = lazy(() => import(/* webpackChunkName: 'ProductCard' */ './components/ProductCard/ProductCard'));
 
 function App() {
 
@@ -18,11 +18,13 @@ function App() {
       <div className="container">
         <div className="content">
           <Header />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/cart' element={<Cart />} />
-            <Route path='/cart/:id' element={<ProductCard />} />
-          </Routes>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/cart' element={<Cart />} />
+              <Route path='/cart/:id' element={<ProductCard />} />
+            </Routes>
+          </Suspense>
         </div>
       </div>
     </div>

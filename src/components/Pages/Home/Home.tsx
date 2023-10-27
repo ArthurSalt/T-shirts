@@ -39,7 +39,6 @@ const Home: React.FC = () => {
       try {
          setIsLoading(true)
          dispatch(fetchItems({ categoryType, sortType, sortOrderType }));
-         setIsLoading(false);
       } catch (error) {
          alert('Failed to get data from server')
       }
@@ -75,7 +74,7 @@ const Home: React.FC = () => {
 
    useEffect(() => {
       if (!isSearch.current) {
-         getItems()
+         getItems().then(() => setIsLoading(false))
       }
       isSearch.current = false;
    }, [categoryType, sortType, sortOrderType, itemsPerPage, currentPage])
