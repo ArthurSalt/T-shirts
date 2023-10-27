@@ -4,7 +4,8 @@
    .pages_row {
       display: flex;
       align-items: center;
-      margin: 20px;
+      min-width: 150px;
+      margin: 10px 20px;
 
       span {
          padding: 0 5px;
