@@ -18,13 +18,11 @@ function App() {
       <div className="container">
         <div className="content">
           <Header />
-          <Suspense fallback={<div>Loading...</div>}>
-            <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path='/cart' element={<Cart />} />
-              <Route path='/cart/:id' element={<ProductCard />} />
-            </Routes>
-          </Suspense>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/cart' element={<Suspense fallback={<div>Loading...</div>}> <Cart /> </Suspense>} />
+            <Route path='/cart/:id' element={<Suspense fallback={<div>Loading...</div>}> <ProductCard /> </Suspense>} />
+          </Routes>
         </div>
       </div>
     </div>
