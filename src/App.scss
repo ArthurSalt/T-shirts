@@ -2,6 +2,18 @@
   background-color: rgb(255, 190, 190);
 }
 
+.btn_back {
+  border: 1px solid red;
+  border-radius: 10px;
+  color: red;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(248, 160, 160);
+  }
+}
+
 /* ----------------------------------------------------------- */
 
 .wrapper {
@@ -12,6 +24,7 @@
 }
 
 .container {
+  min-height: 90vh;
   padding: 10px 30px;
   margin: 10px 50px;
   background-color: aliceblue;
@@ -56,6 +69,10 @@
   color: red;
 
   cursor: pointer;
+
+  &:hover {
+    background-color: rgb(248, 160, 160);
+  }
 }
 
 .item_addedButton {

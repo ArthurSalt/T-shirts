@@ -8,13 +8,14 @@ import cartIcon from '../../../assets/img/cart_icon.png';
 import CartItem from './CartItem';
 
 import './Cart.scss'
+import { Link } from 'react-router-dom';
 
 export const Cart = () => {
 
    const { items, totalPrice } = useAppSelector(selectorCart)
 
    const dispatch = useAppDispatch()
-   
+
    const itemsCount = items.reduce((sum, obj) => sum += obj.count, 0);
 
    const onClickClear = () => {
@@ -23,6 +24,13 @@ export const Cart = () => {
       }
    }
 
+   const onClickPurchase = () => {
+      if (window.confirm('Thank You for the purchase!!!')) {
+         dispatch(clearCart());
+      }
+   }
+
+   // const btnDisabler = items.length ? false : true;
 
    return (
       <div className='cart_wrapper'>
@@ -32,17 +40,21 @@ export const Cart = () => {
                <h1 className='cart_title'>My Cart</h1>
             </div>
             <div>
-               <p onClick={onClickClear} className='cart_clear'>x clear cart</p>
+               <p onClick={onClickClear} className='cart_clear'>&#10006; clear cart</p>
             </div>
          </div>
          <ul className="cart_list">
             {items.length
                ? items.map(item => <CartItem key={item.id + item.size} {...item} />)
-               : <p className='cart_empty'>Cart is empty.</p>}
+               : <p className='cart_empty'>Your cart is empty. Please add items to proceed</p>}
          </ul>
          <div className="cart_info">
             <p>Items in cart: {itemsCount}</p>
             <p>Total: <span className='cart_total'>${totalPrice}</span></p>
+         </div>
+         <div className="cart_buttons">
+            <Link to='/'><button className='btn_back'>← Back</button></Link>
+            <button onClick={onClickPurchase} disabled={items.length ? false : true} className='btn_purchase'>{items.length ? `Purchase ${itemsCount} items` : 'Purchase'}</button>
          </div>
       </div>
    );

@@ -7,7 +7,7 @@ import './Category.css';
 const Category: React.FC = () => {
    const categories = ['All', 'T-Shirt', 'Hoodie', 'Longsleeve', 'Sweatshirt'];
 
-   const {categoryType} = useSelector(selectFilter);
+   const { categoryType } = useSelector(selectFilter);
    const dispatch = useDispatch();
 
    return (

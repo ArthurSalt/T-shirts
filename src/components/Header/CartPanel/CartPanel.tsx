@@ -10,9 +10,9 @@ import styles from './CartPanel.module.scss'
 
 
 
-const CartPanel: React.FC = () => {
+const CartPanel: React.FC = React.memo(() => {
    const location = useLocation();
-
+   
    const { items, totalPrice } = useAppSelector(selectorCart);
 
    const itemsCount = items.reduce((sum, obj) => sum += obj.count, 0);
@@ -27,6 +27,6 @@ const CartPanel: React.FC = () => {
          </Link>
       </div>
    );
-}
+})
 
 export default CartPanel

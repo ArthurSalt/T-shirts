@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-import {SizeBar, AddButton} from '../index';
+import { SizeBar, AddButton } from '../index';
 
 import './ProductCard.scss'
 
@@ -58,7 +58,8 @@ const ProductCard: React.FC = () => {
                Iure minima suscipit nesciunt qui enim? Eos, eum quod!
                In fugit excepturi aliquid, consequuntur vitae quidem harum tempora, ab sit at expedita?
             </div>
-            <div className="product-buy">
+            <div className="product_buy">
+               <Link to='/'><button className='btn_back'>← Back</button></Link>
                <AddButton newItem={{ ...item, count: 1, size: activeSize }} />
             </div>
          </div>

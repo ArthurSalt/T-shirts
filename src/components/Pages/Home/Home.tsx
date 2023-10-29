@@ -6,7 +6,7 @@ import { fetchItems, selectItems } from '../../../redux/slices/getItemsSlice';
 import { selectPages, setCurrentPage, setItemsPerPage } from '../../../redux/slices/paginationSlice';
 import { selectFilter, setFilters } from '../../../redux/slices/filterSlice';
 
-import {Category, Sort, ItemCard, Pagination, Skeleton} from '../../index';
+import { Category, Sort, ItemCard, Pagination, Skeleton } from '../../index';
 import qs from 'query-string';
 
 const Home: React.FC = () => {
@@ -27,10 +27,11 @@ const Home: React.FC = () => {
    const searchActive = searchValue ? searchResult : items;
    const currentItems = searchActive.slice(firstItem, lastItem);
 
+
    const getItems = async () => {
       try {
          setIsLoading(true)
-         dispatch(fetchItems({ categoryType, sortType, sortOrderType }));
+         dispatch(fetchItems({ categoryType, sortType, sortOrderType, searchValue }));
       } catch (error) {
          alert('Failed to get data from server')
       }

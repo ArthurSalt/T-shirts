@@ -6,7 +6,7 @@ import Home from './components/Pages/Home/Home';
 import Header from './components/Header/Header';
 
 import './reset.css';
-import './App.css';
+import './App.scss';
 
 const Cart = lazy(() => import(/* webpackChunkName: 'Cart' */ './components/Pages/Cart/Cart'));
 const ProductCard = lazy(() => import(/* webpackChunkName: 'ProductCard' */ './components/ProductCard/ProductCard'));
