@@ -3,11 +3,19 @@
       display: flex;
       justify-content: left;
       padding: 20px 0;
+
+      @media(max-width: 480px) {
+         display: block;
+      }
    }
 
    &_img {
       width: 200px;
       height: 200px;
+
+      @media(max-width: 480px) {
+         width: auto;
+      }
    }
 
    &_info {
@@ -16,6 +24,10 @@
 
       p {
          padding: 5px 0;
+      }
+
+      @media(max-width: 480px) {
+         width: auto;
       }
    }
 

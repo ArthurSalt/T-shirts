@@ -4,6 +4,10 @@
       width: 60%;
       border-radius: 10px;
       backGround-color: #e9e9e9;
+
+      @media(max-width: 700px) {
+         width: 90%;
+      }
    }
 
    &_head {
@@ -126,6 +130,10 @@
       &_remove:hover {
          opacity: 1;
          cursor: pointer;
+      }
+
+      @media(max-width: 450px) {
+         display: block;
       }
    }
 }
