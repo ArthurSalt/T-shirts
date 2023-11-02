@@ -3,13 +3,19 @@
    flex-direction: column;
    justify-content: space-between;
    align-items: center;
-   margin: 10px;
+   margin: 5px;
+   padding: 10px;
+   max-height: 365px;
+
+   
+   border-radius: 10px;
+   box-shadow: 0px 0px 10px rgb(176, 176, 255);
 
    &_img {
       width: 200px;
       height: 200px;
       border-radius: 5px;
-      box-shadow: 2px 2px 5px grey;
+      // box-shadow: 2px 2px 5px grey;
 
       &:hover {
          scale: 1.03;

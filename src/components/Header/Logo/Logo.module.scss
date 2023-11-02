@@ -9,8 +9,8 @@
    }
 
    &_text {
+      color: var(--text-color);
       padding: 10px;
-      font-family: 'Rubik', sans-serif;
       font-weight: 600;
 
       p {

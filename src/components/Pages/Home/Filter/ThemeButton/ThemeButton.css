@@ -1,25 +1,26 @@
-.sort_wrapper {
+.theme_wrapper {
    display: flex;
+   width: 150px;
 }
 
-.sort {
+.theme {
    display: flex;
    position: relative;
    padding: 0 10px;
 }
 
-.sort_type {
+.theme_type {
    padding: 0 5px;
    color: orangered;
    text-decoration: underline;
    cursor: pointer;
 }
 
-.sort_popup {
+.theme_popup {
    width: 80px;
    position: absolute;
-   right: 5px;
-   top: 20px;
+   left: 120px;
+   bottom: 0px;
    border-radius: 5px;
    line-height: 25px;
    text-align: center;
@@ -28,7 +29,6 @@
    cursor: pointer;
 }
 
-.sort_popup li:hover {
+.theme_popup li:hover {
    background-color: rgb(255, 190, 190);
-   border-radius: 5px;
 }

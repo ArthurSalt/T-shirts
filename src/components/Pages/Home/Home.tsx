@@ -8,6 +8,7 @@ import { selectFilter, setFilters } from '../../../redux/slices/filterSlice';
 
 import { Category, Sort, ItemCard, Pagination, Skeleton } from '../../index';
 import qs from 'query-string';
+import ThemeButton from './Filter/ThemeButton/ThemeButton';
 
 const Home: React.FC = () => {
    const dispatch = useAppDispatch();
@@ -86,9 +87,10 @@ const Home: React.FC = () => {
                   : currentItems.map(obj => <ItemCard key={obj.id} {...obj} />)}
             </div>
          </section>
-         <Pagination
-            items={searchActive}
-         />
+         <section className='footer'>
+            <Pagination items={searchActive}/>
+            <ThemeButton />
+         </section>
       </>
    );
 }
