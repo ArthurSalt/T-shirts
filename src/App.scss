@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');// font-family: 'Montserrat', sans-serif;
+// font-family: 'Quicksand', sans-serif;
+
 [data-theme='dark'] {
   --bg-color: #000;
   --cont-color: #212121;
-  --text-color: rgb(108 60 255);
+  --text-color: rgb(137 98 255);
   --active-color: rgb(93 24 24);
   --category-color: rgb(37 59 61);
 }
@@ -70,6 +73,7 @@ body {
 }
 
 .content {
+  font-family: 'Quicksand', sans-serif;
   padding: 5px;
   color: var(--text-color);
 }
@@ -97,6 +101,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  min-height: 60vh;
 }
 
 .item_addButton {
@@ -131,10 +136,12 @@ body {
 }
 
 .footer {
-  height: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   background-color: rgb(127, 127, 184);
-  text-align: center;
 }
+
 
 
 /* Media  */

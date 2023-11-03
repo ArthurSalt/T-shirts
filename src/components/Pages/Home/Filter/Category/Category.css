@@ -4,7 +4,7 @@
 
 .category {
    padding: 5px 10px;
-   margin: 5px 20px;
+   margin: 15px 20px;
    background-color: var(--category-color);
    border-radius: 20px;
    cursor: pointer;
