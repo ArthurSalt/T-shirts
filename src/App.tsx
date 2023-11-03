@@ -15,7 +15,8 @@ function App() {
 
   return (
     <div className="wrapper">
-      <div className="container">
+      
+      <main className="container">
         <div className="content">
           <Header />
           <Routes>
@@ -24,7 +25,8 @@ function App() {
             <Route path='/cart/:id' element={<Suspense fallback={<div>Loading...</div>}> <ProductCard /> </Suspense>} />
           </Routes>
         </div>
-      </div>
+      </main>
+      <footer className='footer'>FOOTER</footer>
     </div>
   );
 }

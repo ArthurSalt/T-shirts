@@ -1,14 +1,15 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 import './ThemeButton.css';
 
 const ThemeButton = () => {
     const [modal, setModal] = useState(false)
-    const [activeTheme, setActiveTheme] = useState('default')
+    const [activeTheme, setActiveTheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : 'default')
 
     const themesList = ['default' , 'dark']
 
     const onSelectedTheme = (el) => {
+        localStorage.setItem('theme', el)
         setActiveTheme(el)
         setBodyAttr(el)
         setModal(false)
@@ -17,6 +18,8 @@ const ThemeButton = () => {
     const setBodyAttr = (el) => {
         document.querySelector('body').setAttribute('data-theme', el)
     }
+
+    useEffect(() => setBodyAttr(activeTheme), [])
 
     return (
     <div className="theme_wrapper">
