@@ -4,7 +4,7 @@ import './ThemeButton.css';
 
 const ThemeButton = () => {
     const [modal, setModal] = useState(false)
-    const [activeTheme, setActiveTheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : 'aqua')
+    const [activeTheme, setActiveTheme] = useState(localStorage.getItem('AllTshirt_theme') ? localStorage.getItem('AllTshirt_theme') : 'default')
 
     const themesList = ['default', 'autumn', 'dark', 'aqua'];
 
@@ -24,7 +24,7 @@ const ThemeButton = () => {
 
 
     const onSelectedTheme = (el: string) => {
-        localStorage.setItem('theme', el);
+        localStorage.setItem('AllTshirt_theme', el);
         setActiveTheme(el);
         setBodyAttr(el);
         setModal(false);
