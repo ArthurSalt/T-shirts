@@ -25,13 +25,13 @@ const Pagination = ({ items }) => {
       <div className='pagination'>
          <ul className='pages_row'>
             {pages.map((num, i) => (
-               <li onClick={() => dispatch(setCurrentPage(num))} className={currentPage === i + 1 ? 'active page' : 'page'} key={num}>{num}</li>
+               <li onClick={() => dispatch(setCurrentPage(num))} className={currentPage === i + 1 ? 'page_active' : 'page'} key={num}>{num}</li>
             ))}
          </ul>
 
          <div className="pages_row"><span>Items per page: </span>
             {[5, 10, 20].map(num => (
-               <li onClick={() => onPerPageClick(num)} className={itemsPerPage === num ? 'active page' : 'page'} key={num}>{num}</li>
+               <li onClick={() => onPerPageClick(num)} className={itemsPerPage === num ? 'page_active' : 'page'} key={num}>{num}</li>
             ))}
          </div>
       </div>

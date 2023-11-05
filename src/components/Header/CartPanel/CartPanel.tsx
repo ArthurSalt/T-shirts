@@ -20,10 +20,10 @@ const CartPanel: React.FC = React.memo(() => {
    return (
       location.pathname !== '/cart' && <div className={styles.cart_wrapper}>
          <Link to='/cart' className={styles.cart}>
-            <p>${totalPrice}</p>
+            <span>${totalPrice}</span>
             <p>|</p>
             <img className={styles.cart_img} src={cartIcon} alt="cart_logo" />
-            <b>{itemsCount}</b>
+            {itemsCount ? <b>{itemsCount}</b> : ''}
          </Link>
       </div>
    );

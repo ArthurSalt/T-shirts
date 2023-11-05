@@ -1,11 +1,29 @@
 .cart_wrapper {
    display: flex;
+   width: 200px;
    align-items: center;
+   background-color: var(--cart-bg);
+   border-radius: 20px;
 
    @media(max-width: 480px) {
       position: absolute;
       top: 2vh;
       right: 5vw;
+   }
+
+   span {
+      font-weight: 600;
+      color: orangered;
+   }
+
+   b {
+      text-align: center;
+      font-weight: 500;
+      line-height: 20px;
+      background-color: #97fd37;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
    }
 }
 
@@ -17,7 +35,7 @@
    margin: 0 10px;
    width: auto;
    height: 30px;
-   background-color: lightcoral;
+   // background-color: lightcoral;
 
    border-radius: 15px;
 

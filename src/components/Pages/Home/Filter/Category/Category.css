@@ -3,13 +3,15 @@
 }
 
 .category {
-   padding: 5px 10px;
-   margin: 15px 20px;
-   background-color: var(--category-color);
-   border-radius: 20px;
-   cursor: pointer;
+  position: relative;
+  padding: 5px 10px;
+  margin: 15px 20px;
+  background-color: var(--category-color);
+  border-radius: 20px;
+  cursor: pointer;
  }
  
  .category:hover {
-   background-color: rgb(20, 140, 145);
+  background-color: var(--active-hover);
+  color: var(--active-text);
  }
