@@ -21,7 +21,8 @@
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
     "typescript": "^5.2.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "homepage": "https://arthursalt.github.io/T-shirts"
   },
   "scripts": {
     "dev": "concurrently \"npm run server\" \" npm start\"",
@@ -29,7 +30,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server --watch server/db.json -p 3001"
+    "server": "json-server --watch server/db.json -p 3001",
+    "deploy": "npm run build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +53,7 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.1",
+    "gh-pages": "6.0.0",
     "sass": "^1.66.1"
   }
 }

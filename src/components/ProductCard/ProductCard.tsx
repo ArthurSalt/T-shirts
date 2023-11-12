@@ -16,7 +16,7 @@ export interface ItemT {
    category?: number,
 }
 
-const ProductCard: React.FC = () => {
+const ProductCard = () => {
    const { id } = useParams();
 
    const [item, setItem] = useState<ItemT>();
