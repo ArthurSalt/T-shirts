@@ -22,7 +22,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/cart' element={<Suspense fallback={<div>Loading...</div>}> <Cart /> </Suspense>} />
-            <Route path='/cart/:id' element={<Suspense fallback={<div>Loading...</div>}> <ProductCard /> </Suspense>} />
+            <Route path='/:id' element={<Suspense fallback={<div>Loading...</div>}> <ProductCard /> </Suspense>} />
           </Routes>
         </div>
       </main>

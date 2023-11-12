@@ -19,7 +19,7 @@ const ItemCard: React.FC<ItemT> = ({ id, name, imageUrl, price, sizes, rating })
 
    return (
       <div className={styles.item}>
-         <Link to={`/cart/${id}`}><img className={styles.item_img} src={imageUrl} alt="" /></Link>
+         <Link to={`/${id}`}><img className={styles.item_img} src={imageUrl} alt="" /></Link>
          <p className={styles.item_title}>{name}</p>
          <p className={styles.item_rating}>Rating: {rating}</p>
          <div className={styles.item_controls}>
