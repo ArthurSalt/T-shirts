@@ -48,8 +48,7 @@ const Sort = () => {
             {modalOrder && (
                <ul className='sort_popup'>
                   {listOrder.map(type => (
-                     <li key={type} onClick={() => onSelectedSortOrder(type)}
-                        className={sortOrderType === type ? 'active' : ''}>
+                     <li key={type} onClick={() => onSelectedSortOrder(type)}>
                         {type}
                      </li>))}
                </ul>
@@ -59,7 +58,7 @@ const Sort = () => {
 
 
          <div ref={sortRef} className="sort">
-            <p>Sort by <span onClick={() => {
+            <p>Sort by: <span onClick={() => {
                setModalSort(!modalSort)
             }
             } className='sort_type'>{sortType}</span></p>
@@ -68,8 +67,7 @@ const Sort = () => {
             {modalSort && (
                <ul className='sort_popup'>
                   {list.map(type => (
-                     <li key={type} onClick={() => onSelectedSort(type)}
-                        className={sortType === type ? 'active' : ''}>
+                     <li key={type} onClick={() => onSelectedSort(type)}>
                         {type}
                      </li>))}
                </ul>

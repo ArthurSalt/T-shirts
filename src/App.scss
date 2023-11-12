@@ -14,6 +14,7 @@
   --active-text: red;
   --category-color: transparent;
   --cart-bg: transparent;
+  --cart-bg-adapt: #cdd3d3;
 }
 
 [data-theme='dark'] {
@@ -27,6 +28,7 @@
   --active-text: rgb(137 98 255);
   --category-color: rgb(37 59 61);
   --cart-bg: #643d3d;
+  --cart-bg-adapt: #643d3d;
 }
 
 [data-theme='autumn'] {
@@ -40,6 +42,7 @@
   --active-text: #6e0057;
   --category-color: rgb(255 166 132);
   --cart-bg: transparent;
+  --cart-bg-adapt: rgb(255 166 132);
 }
 
 [data-theme='aqua'] {
@@ -53,6 +56,7 @@
   --active-text: #002b7c;
   --category-color: rgb(144, 210, 214);
   --cart-bg: transparent;
+  --cart-bg-adapt: rgb(144, 210, 214);
 }
 
 .active {
