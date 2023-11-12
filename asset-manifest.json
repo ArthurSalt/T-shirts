@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/T-shirts/static/css/main.a719b3eb.css",
-    "main.js": "/T-shirts/static/js/main.68d2cb17.js",
+    "main.css": "/T-shirts/static/css/main.0b6e341a.css",
+    "main.js": "/T-shirts/static/js/main.f89fe886.js",
     "Cart.css": "/T-shirts/static/css/Cart.e31f721c.chunk.css",
     "Cart.js": "/T-shirts/static/js/Cart.2492980b.chunk.js",
     "ProductCard.css": "/T-shirts/static/css/ProductCard.e4b7d6cb.chunk.css",
@@ -9,15 +9,15 @@
     "static/media/t_shirt_logo.png": "/T-shirts/static/media/t_shirt_logo.51f8a7e0867960053e88.png",
     "static/media/cart_icon.png": "/T-shirts/static/media/cart_icon.4e8729b09a2c5a571f46.png",
     "index.html": "/T-shirts/index.html",
-    "main.a719b3eb.css.map": "/T-shirts/static/css/main.a719b3eb.css.map",
-    "main.68d2cb17.js.map": "/T-shirts/static/js/main.68d2cb17.js.map",
+    "main.0b6e341a.css.map": "/T-shirts/static/css/main.0b6e341a.css.map",
+    "main.f89fe886.js.map": "/T-shirts/static/js/main.f89fe886.js.map",
     "Cart.e31f721c.chunk.css.map": "/T-shirts/static/css/Cart.e31f721c.chunk.css.map",
     "Cart.2492980b.chunk.js.map": "/T-shirts/static/js/Cart.2492980b.chunk.js.map",
     "ProductCard.e4b7d6cb.chunk.css.map": "/T-shirts/static/css/ProductCard.e4b7d6cb.chunk.css.map",
     "ProductCard.2ce8e91e.chunk.js.map": "/T-shirts/static/js/ProductCard.2ce8e91e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a719b3eb.css",
-    "static/js/main.68d2cb17.js"
+    "static/css/main.0b6e341a.css",
+    "static/js/main.f89fe886.js"
   ]
 }
