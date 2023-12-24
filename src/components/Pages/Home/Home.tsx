@@ -14,7 +14,7 @@ const Home: React.FC = () => {
    const dispatch = useAppDispatch();
    const useSelector = useAppSelector;
    const navigate = useNavigate()
-   const [isLoading, setIsLoading] = useState(true);
+   const [isLoading, setIsLoading] = useState(false);
    const isMounted = useRef(false);
    const isSearch = useRef(false);
 
@@ -32,7 +32,8 @@ const Home: React.FC = () => {
    const getItems = async () => {
       try {
          setIsLoading(true)
-         dispatch(fetchItems({ categoryType, sortType, sortOrderType, searchValue }));
+         await dispatch(fetchItems({ categoryType, sortType, sortOrderType, searchValue }));
+         setIsLoading(false)
       } catch (error) {
          alert('Failed to get data from server')
       }
@@ -52,6 +53,8 @@ const Home: React.FC = () => {
       }
    }, [])
 
+   console.log(currentItems)
+
    useEffect(() => {
       if (isMounted.current) {
          const queryString = qs.stringify({
@@ -68,6 +71,7 @@ const Home: React.FC = () => {
 
    useEffect(() => {
       if (!isSearch.current) {
+         setIsLoading(true)
          getItems().then(() => setIsLoading(false))
       }
       isSearch.current = false;
@@ -88,7 +92,7 @@ const Home: React.FC = () => {
             </div>
          </section>
          <section className='pagination_wrapper'>
-            <Pagination items={searchActive}/>
+            <Pagination itemsLength={searchActive.length}/>
             <ThemeButton />
          </section>
       </>

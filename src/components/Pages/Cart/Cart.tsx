@@ -10,7 +10,7 @@ import CartItem from './CartItem';
 import './Cart.scss'
 import { Link } from 'react-router-dom';
 
-export const Cart = () => {
+export const Cart: React.FC = () => {
 
    const { items, totalPrice } = useAppSelector(selectorCart)
 

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 
 import './ThemeButton.scss';
 
-const ThemeButton = () => {
+const ThemeButton: React.FC = () => {
     const [modal, setModal] = useState(false)
     const [activeTheme, setActiveTheme] = useState(localStorage.getItem('AllTshirt_theme') ? localStorage.getItem('AllTshirt_theme') : 'default')
 

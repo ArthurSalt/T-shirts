@@ -39,8 +39,8 @@ export const fetchItemsSlice = createSlice({
             state.items = []
          })
          .addCase(fetchItems.fulfilled, (state, action) => {
-            state.items = action.payload
             state.status = "success"
+            state.items = action.payload
          })
          .addCase(fetchItems.rejected, (state) => {
             state.status = "error"

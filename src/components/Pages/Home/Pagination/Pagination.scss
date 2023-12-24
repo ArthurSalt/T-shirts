@@ -5,6 +5,7 @@
       display: flex;
       align-items: center;
       margin: 10px 20px;
+      min-width: 100px;
 
       span {
          padding: 0 5px;
@@ -38,7 +39,7 @@
       }
    }
 
-   @media(max-width: 500px) {
+   @media(max-width: 570px) {
       display: block;
       font-size: 14px;
    }

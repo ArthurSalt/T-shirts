@@ -16,7 +16,8 @@ export interface ItemT {
    category?: number,
 }
 
-const ProductCard = () => {
+
+const ProductCard: React.FC = (): JSX.Element => {
    const { id } = useParams();
 
    const [item, setItem] = useState<ItemT>();
@@ -35,7 +36,7 @@ const ProductCard = () => {
    }, [id])
 
    if (!item) {
-      return "Loading..."
+      return <div>"Loading..."</div>
    }
 
    return (

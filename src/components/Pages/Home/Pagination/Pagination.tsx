@@ -2,21 +2,21 @@ import React from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../../../utils/hooks';
 import { selectPages, setCurrentPage, setItemsPerPage } from '../../../../redux/slices/paginationSlice';
+
 import './Pagination.scss'
 
-const Pagination = ({ items }) => {
+const Pagination = ( {itemsLength} ) => {
 
    const dispatch = useAppDispatch();
    const pages = [];
-   const { currentPage } = useAppSelector(selectPages)
-   const { itemsPerPage } = useAppSelector(selectPages)
+   const { currentPage, itemsPerPage } = useAppSelector(selectPages);
 
    const onPerPageClick = (num: number) => {
       dispatch(setItemsPerPage(num))
       dispatch(setCurrentPage(1))
    }
 
-   for (let i = 1; i <= Math.ceil(items.length / itemsPerPage); i++) {
+   for (let i = 1; i <= Math.ceil(itemsLength / itemsPerPage); i++) {
       pages.push(i);
    }
 

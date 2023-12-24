@@ -2,7 +2,7 @@ import React from 'react';
 import { useAppDispatch, useAppSelector } from '../utils/hooks';
 import { addItem } from '../redux/slices/cartSlice';
 
-const AddButton = ({ newItem }) => {
+const AddButton = ( {newItem} ): JSX.Element => {
    const dispatch = useAppDispatch();
    const itemCount = useAppSelector(state => state.cart.items.filter(obj => obj.id === newItem.id).reduce((sum, obj) => sum += obj.count, 0))
 
