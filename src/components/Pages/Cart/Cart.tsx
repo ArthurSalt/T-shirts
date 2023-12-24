@@ -30,8 +30,6 @@ export const Cart = () => {
       }
    }
 
-   // const btnDisabler = items.length ? false : true;
-
    return (
       <div className='cart_wrapper'>
          <div className='cart_head'>

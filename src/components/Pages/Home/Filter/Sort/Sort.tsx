@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../../../utils/hooks';
 import { setSortType, setSortOrderType, selectFilter } from '../../../../../redux/slices/filterSlice'
 
-import './Sort.css'
+import './Sort.scss'
 
 const Sort = () => {
    const [modalSort, setModalSort] = React.useState(false);

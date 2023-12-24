@@ -31,15 +31,3 @@ function App() {
 }
 
 export default App;
-
-// npm install -g json-server
-// npm i -D concurrently
-// npm run server
-// npm run dev
-
-// {
-//    "name": "tshirt",
-//    "imageUrl": "https://storage.vsemayki.ru/images/0/1/1879/1879869/previews/people_5_man_jacket_front_black_500.jpg",
-//    "price": 200,
-//    "size": ["S", "M", "L", "XL", "2XL", "3XL"]
-// }

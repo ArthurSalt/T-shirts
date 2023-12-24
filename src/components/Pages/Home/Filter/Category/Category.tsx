@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectFilter, setCategoryType } from '../../../../../redux/slices/filterSlice';
 
-import './Category.css';
+import './Category.scss';
 
 const Category: React.FC = () => {
    const categories = ['All', 'T-Shirt', 'Hoodie', 'Longsleeve', 'Sweatshirt'];

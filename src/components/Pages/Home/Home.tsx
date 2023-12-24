@@ -87,7 +87,7 @@ const Home: React.FC = () => {
                   : currentItems.map(obj => <ItemCard key={obj.id} {...obj} />)}
             </div>
          </section>
-         <section className='pagination'>
+         <section className='pagination_wrapper'>
             <Pagination items={searchActive}/>
             <ThemeButton />
          </section>

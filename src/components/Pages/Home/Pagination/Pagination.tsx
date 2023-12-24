@@ -2,7 +2,6 @@ import React from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../../../utils/hooks';
 import { selectPages, setCurrentPage, setItemsPerPage } from '../../../../redux/slices/paginationSlice';
-
 import './Pagination.scss'
 
 const Pagination = ({ items }) => {

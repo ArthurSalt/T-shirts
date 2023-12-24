@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Palanquin+Dark:wght@500&family=Quicksand:wght@500&display=swap');
-// font-family: 'Montserrat', sans-serif;
-// font-family: 'Palanquin Dark', sans-serif;
-// font-family: 'Quicksand', sans-serif;
 
 [data-theme='default'] {
   --font: 'Montserrat', sans-serif;
@@ -92,21 +89,6 @@ body {
   width: 100%;
 }
 
-// .wrapper {
-//   width: 100%;
-//   min-width: 280px;
-//   height: auto;
-//   background-color: greenyellow;
-//   padding-top: 30px;
-// }
-
-// .container {
-//   padding: 20px 30px;
-//   margin: 0 50px;
-//   background-color: aliceblue;
-//   border-radius: 10px;
-// }
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -114,6 +96,14 @@ body {
   min-width: 280px;
   min-height: 100vh;
   background: var(--bg-color);
+
+  @media(max-width: 955px) {
+    padding-top: 5px;
+  }
+
+  @media(max-width: 480px) {
+    position: relative;
+  }
 }
 
 .container {
@@ -122,6 +112,11 @@ body {
   background-color: var(--cont-color);
   border-radius: 10px;
   flex: 1 1 auto;
+
+  @media(max-width: 955px) {
+    padding: 20px 10px;
+    margin: 20px 20px;
+  }
 }
 
 .content {
@@ -142,6 +137,10 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
+
+  @media(max-width: 670px) {
+    display: block;
+  }
 }
 
 .items_list_name {
@@ -154,6 +153,10 @@ body {
   justify-content: space-evenly;
   flex-wrap: wrap;
   min-height: 60vh;
+
+  @media(max-width: 480px) {
+    justify-content: right;
+  }
 }
 
 .item_addButton {
@@ -178,72 +181,15 @@ body {
   cursor: pointer;
 }
 
-.pagination {
+.pagination_wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   font-size: 16px;
   font-weight: 600;
-}
 
-// .footer {
-//   display: flex;
-//   justify-content: space-evenly;
-//   align-items: center;
-//   background-color: rgb(127, 127, 184);
-// }
-
-
-
-/* Media  */
-
-@media(max-width: 955px) {
-  .wrapper {
-    padding-top: 5px;
-  }
-
-  .container {
-    padding: 20px 10px;
-    margin: 20px 20px;
-  }
-
-  .category {
-    margin: 10px 5px;
-  }
-
-  .sort {
-    padding: 0px;
-  }
-}
-
-@media(max-width: 670px) {
-  .content_top {
-    display: block;
-  }
-
-  .sort_wrapper {
-    margin-top: 20px;
-  }
-}
-
-@media(max-width: 480px) {
-  .wrapper {
-    position: relative;
-  }
-
-  .categories {
-    position: absolute;
-    display: block;
-    top: 45vh;
-    left: 0vw;
-  }
-
-  .items_list {
-    justify-content: right;
-  }
-
-  .pagination {
+  @media(max-width: 480px) {
     display: block;
   }
 }

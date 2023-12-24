@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 
-import './ThemeButton.css';
+import './ThemeButton.scss';
 
 const ThemeButton = () => {
     const [modal, setModal] = useState(false)
