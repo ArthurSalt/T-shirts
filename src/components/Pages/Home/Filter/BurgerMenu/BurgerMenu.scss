@@ -1,8 +1,7 @@
 .burger_wrapper {
-  position: fixed;
+  position: absolute;
   top: 0;
-  left: -20px;
-  top: 30vh;
+  left: 0;
 
   @media(min-width: 370px) {
     display: none;
@@ -10,6 +9,8 @@
 }
 
 .burger {
+  position: fixed;
+  left: -20px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -39,14 +40,15 @@
   background-color: rgba(#000000, 0.4);
   opacity: 0;
   pointer-events: none;
+  z-index: 10;
 
   transition: all ease .5s;
 
 }
 .popUp_content {
-  position: absolute;
+  position: relative;
   display: flex;
-  min-width: 50%;
+  width: 50%;
   height: 100%;
   left: -100%;
   background-color: white;
