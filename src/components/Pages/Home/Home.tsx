@@ -54,8 +54,6 @@ const Home: React.FC = () => {
       }
    }, [])
 
-   console.log(currentItems)
-
    useEffect(() => {
       if (isMounted.current) {
          const queryString = qs.stringify({
