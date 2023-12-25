@@ -39,7 +39,7 @@ const ThemeButton: React.FC = () => {
     return (
     <div className="theme_wrapper">
         <div className="theme">
-            <p>Theme: <span onClick={() => setModal(true)} className='theme_type'>{activeTheme}</span></p>
+            <p>Theme: <span onClick={() => setModal(prev => !prev)} className='theme_type'>{activeTheme}</span></p>
 
             {modal && (
                 <ul className="theme_popup">
